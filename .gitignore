@@ -1,0 +1,13 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+example-run.json
+output.json
+
+runs/
+research_raw/
+research_request.json
+financials.json
+valuation.json
+config.json
+holdings_snapshot.json
