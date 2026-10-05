@@ -33,26 +33,69 @@ Mochikabu is an open-source AI agent skill for Japanese employee stock ownership
 - 「株価がフェアバリューを上回っていても、奨励金を考えると買付は合理的？」
 - 「次の持株会変更時期まで、増額・維持・減額のどれが妥当？」
 
-## Quick start
+## Install / Quick start
 
-Python 3.10 以降を使用します。評価・試算・テストは標準ライブラリで動作します。PDF のテキスト抽出には `pypdf` を使用します。
+Mochikabu は Agent Skills 互換の自己完結パッケージを `skills/mochikabu/` に収録しています。Codex、Claude Code など複数の Agent では、Agent Skills CLI または GitHub CLI からインストールできます。
+
+### Agent Skills CLI（推奨）
+
+```bash
+npx skills add Siyuan-chat/mochikabu --skill mochikabu
+```
+
+公開レジストリに反映された後は、例えば次のように検索できます。
+
+```bash
+npx skills find "employee stock ownership"
+npx skills find "持株会"
+```
+
+### GitHub CLI
+
+Codex:
+
+```bash
+gh skill install Siyuan-chat/mochikabu mochikabu --agent codex --scope user
+```
+
+Claude Code:
+
+```bash
+gh skill install Siyuan-chat/mochikabu mochikabu --agent claude-code --scope user
+```
+
+公開後は GitHub の skill search からも検索できます。
+
+```bash
+gh skill search "employee stock ownership"
+gh skill search "持株会"
+```
+
+### DSH / 共通 skill directory
+
+DSH など `~/.agents/skills/` を読む Agent では、配布パッケージだけを配置できます。
+
+```bash
+git clone --depth 1 https://github.com/Siyuan-chat/mochikabu.git /tmp/mochikabu
+mkdir -p ~/.agents/skills
+cp -R /tmp/mochikabu/skills/mochikabu ~/.agents/skills/mochikabu
+```
+
+DSH 専用にする場合は同じディレクトリを `~/.dsh/skills/mochikabu` に配置できます。
+
+Python 3.10 以降を使用します。評価・試算は標準ライブラリで動作し、PDF のテキスト抽出には `pypdf` を使用します。
 
 ```bash
 python -m pip install pypdf
-git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu
 ```
 
-Windows PowerShell:
-
-```powershell
-git clone https://github.com/Siyuan-chat/mochikabu.git "$env:USERPROFILE\.codex\skills\mochikabu"
-```
-
-このリポジトリ全体が `mochikabu` スキルです。利用するエージェントのスキル保存先に配置し、例えば次のように依頼します。
+インストール後は、例えば次のように依頼します。
 
 > $mochikabu を使って、勤務先の持株会の拠出額を検討したいです。会社名は〇〇、現在の月額拠出は〇〇円です。まず必要な情報を対話で確認してください。
 
 ユーザーは通常 JSON を編集する必要はありません。エージェントが会社、現在の拠出額、保有状況、制度ルール、目的を確認し、公開資料を調べ、設定ファイルを作成してスクリプトを実行します。
+
+従来どおりリポジトリ全体を clone して開発・テストすることもできますが、Agent への配布単位は `skills/mochikabu/` です。
 
 ## 処理の流れ
 
