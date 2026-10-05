@@ -17,6 +17,14 @@ Important boundaries:
 - Mochikabu does not execute trades;
 - missing or stale evidence remains OPEN or partial rather than being invented.
 
+
+Installation and discovery:
+- Agent Skills CLI: npx skills add Siyuan-chat/mochikabu --skill mochikabu
+- GitHub CLI / Codex: gh skill install Siyuan-chat/mochikabu mochikabu --agent codex --scope user
+- GitHub CLI / Claude Code: gh skill install Siyuan-chat/mochikabu mochikabu --agent claude-code --scope user
+- Search: npx skills find "employee stock ownership" or gh skill search "employee stock ownership"
+- DSH/shared directory: install the skills/mochikabu directory as ~/.agents/skills/mochikabu or ~/.dsh/skills/mochikabu
+
 Canonical project:
 https://github.com/Siyuan-chat/mochikabu
 
