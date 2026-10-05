@@ -1,0 +1,30 @@
+{
+  "as_of": "2026-09-30",
+  "source": "synthetic example, not an actual account",
+  "price_basis": "pre_split",
+  "split_ratio_to_current": 2,
+  "personal_contribution": 20000,
+  "company_incentive": 1000,
+  "purchase_amount": 21000,
+  "displayed_shares": 10.5,
+  "rows": [
+    {
+      "date": "2026-08",
+      "type": "monthly",
+      "contribution": 10000,
+      "incentive": 500,
+      "purchase_amount": 10500,
+      "shares": 5.25,
+      "unit_price": 2000
+    },
+    {
+      "date": "2026-09",
+      "type": "monthly",
+      "contribution": 10000,
+      "incentive": 500,
+      "purchase_amount": 10500,
+      "shares": 5.25,
+      "unit_price": 2000
+    }
+  ]
+}

@@ -133,13 +133,13 @@
 <section id="quickstart" class="quickstart">
 <div>
 <p class="eyebrow">QUICK START</p>
-<h2>Codex skill として導入</h2>
-<p>リポジトリ全体が Mochikabu skill です。ユーザーが通常 JSON を手編集する必要はありません。</p>
+<h2>Codex・Claude Code・DSH に導入</h2>
+<p>標準 Agent Skills パッケージとして配布します。ユーザーが通常 JSON を手編集する必要はありません。</p>
 </div>
 <pre>
-<code>python -m pip install pypdf
-git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu</code>
+<code>npx skills add Siyuan-chat/mochikabu --skill mochikabu</code>
 </pre>
+<p class="micro">GitHub CLI: <code>gh skill install Siyuan-chat/mochikabu mochikabu --agent codex --scope user</code></p>
 <p class="prompt">$mochikabu を使って、勤務先の持株会の拠出額を検討したいです。まず必要な情報を対話で確認してください。</p>
 </section>
 <section id="faq">
