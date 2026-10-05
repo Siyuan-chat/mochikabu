@@ -1,10 +1,21 @@
 ---
 name: mochikabu
-description: Analyze Japanese employee stock ownership and employee shareholding plans (社員持株会 / 従業員持株会) for any company. Use when a user asks whether to increase, maintain, reduce, or pause contributions; for holdings screenshots; plan incentive and dividend-reinvestment modeling; public financial-report and latest-quote retrieval; DCF and peer-relative valuation; employer-stock concentration review; or share and cost targets established through conversation. Treat Japanese plan rules as plan-specific rather than assuming US ESOP/ESPP rules. All monetary inputs and outputs are in Japanese yen (JPY).
+description: Analyze Japanese employee stock ownership / employee shareholding plans (持株会・社員持株会・従業員持株会). Use for 持株会の奨励金, 拠出額, 増額・維持・減額・一時停止, 保有株数, 配当再投資, 自社株集中リスク, DCF・適正株価・割高割安, public financial research, and peer valuation. All monetary inputs and outputs are in JPY. Treat Japanese plan rules as plan-specific rather than assuming US ESOP/ESPP rules.
 license: MIT
 ---
 
 # mochikabu
+
+## Discovery intents
+
+Use this skill when the user's request is about Japanese employee stock plans, including queries such as:
+
+- 「持株会」「社員持株会」「従業員持株会」
+- 「持株会の奨励金」「持株会の拠出額」「持株会を増額・減額・維持すべきか」
+- 「自社株の集中リスク」「勤務先株への資産集中」
+- 「持株会の適正株価」「自社株は割高か割安か」「DCF で自社株を評価」
+- 「持株会の配当再投資」「賞与拠出」「目標株数」
+- "Japanese employee stock ownership plan", "employee shareholding Japan", "employee stock contribution planning"
 
 Support company-specific Japanese employee stock ownership / employee shareholding plan (社員持株会・従業員持株会) decisions. Identify the company, market and actual plan rules from the user's inputs rather than assuming a particular employer or treating US ESOP/ESPP rules as equivalent.
 
