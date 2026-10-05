@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://siyuan-chat.github.io/mochikabu/sitemap.xml

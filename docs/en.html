@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mochikabu — AI Agent Skill for Japanese Employee Stock Ownership Plans</title>
+<meta name="description" content="Open-source AI agent skill for Japanese employee stock ownership and employee shareholding plans: DCF valuation, peer comparison, incentives, concentration risk and contribution planning.">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<link rel="canonical" href="https://siyuan-chat.github.io/mochikabu/en.html">
+<link rel="alternate" hreflang="ja" href="https://siyuan-chat.github.io/mochikabu/">
+<link rel="alternate" hreflang="en" href="https://siyuan-chat.github.io/mochikabu/en.html">
+<link rel="stylesheet" href="./style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mochikabu — AI Agent Skill for Japanese Employee Stock Ownership Plans">
+<meta property="og:description" content="Evaluate the company first, then evaluate the employee stock plan.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mochikabu","description":"Open-source AI agent skill for Japanese employee stock ownership and employee shareholding plans.","applicationCategory":"FinanceApplication","operatingSystem":"Cross-platform","softwareRequirements":"Python 3.10+","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"license":"https://opensource.org/license/mit","codeRepository":"https://github.com/Siyuan-chat/mochikabu","url":"https://siyuan-chat.github.io/mochikabu/en.html","inLanguage":["en","ja"]}</script>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="./">Mochikabu</a>
+<nav>
+<a href="#how">How it works</a>
+<a href="#questions">Questions</a>
+<a href="#faq">FAQ</a>
+<a href="./">日本語</a>
+<a class="nav-cta" href="https://github.com/Siyuan-chat/mochikabu">GitHub</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<p class="eyebrow">OPEN-SOURCE AI AGENT SKILL · JAPANESE EMPLOYEE STOCK PLANS</p>
+<h1>Evaluate the company.<br>Then evaluate the plan.</h1>
+<p class="lead">Mochikabu is an AI agent skill for Japanese employee stock ownership and employee shareholding plans. It connects public financial research, DCF, peer valuation, employee incentives, dividend reinvestment and employer-stock concentration in one contribution decision workflow.</p>
+<div class="actions">
+<a class="button primary" href="https://github.com/Siyuan-chat/mochikabu">View on GitHub</a>
+<a class="button secondary" href="#quickstart">Quick start</a>
+</div>
+<p class="micro">MIT License · Python 3.10+ · JPY-first · No trade execution</p>
+</section>
+<section class="statement">
+<p class="kicker">Not just a contribution calculator.</p>
+<div>
+<h2>The stock price matters before the contribution amount does.</h2>
+<p>Mochikabu first evaluates the employer using public evidence. It then models the plan, including incentives, employee cash cost, dividend reinvestment, affordability and concentration risk.</p>
+</div>
+</section>
+<section id="how">
+<div class="section-head">
+<p class="eyebrow">HOW IT WORKS</p>
+<h2>Company valuation and plan economics in one workflow</h2>
+</div>
+<div class="grid">
+<article class="card">
+<span class="num">01</span>
+<h3>Establish the plan</h3>
+<p>Identify employer, holdings, contributions, incentives, adjustment windows and goals.</p>
+</article>
+<article class="card">
+<span class="num">02</span>
+<h3>Gather evidence</h3>
+<p>Retrieve financial reports, prices and justified peers while preserving source and timestamp.</p>
+</article>
+<article class="card">
+<span class="num">03</span>
+<h3>Value the company</h3>
+<p>Keep DCF and sensitivity separate from PER, PBR and EV/EBITDA comparisons.</p>
+</article>
+<article class="card">
+<span class="num">04</span>
+<h3>Assess contributions</h3>
+<p>Compare incentives, employee cash cost, projected shares, concentration and plan constraints.</p>
+</article>
+</div>
+</section>
+<section id="questions">
+<div class="section-head">
+<p class="eyebrow">QUESTIONS</p>
+<h2>Questions Mochikabu is designed to answer</h2>
+</div>
+<div class="questions">
+<p>“My plan gives a 10% incentive. Should I increase my contribution?”</p>
+<p>“Is my employer stock overvalued or undervalued based on DCF and peers?”</p>
+<p>“Am I concentrating too much of both income and assets in my employer?”</p>
+<p>“Can the plan still be attractive if market price is above estimated fair value?”</p>
+</div>
+<a class="text-link" href="./case-incentive-vs-valuation.html">See the decision logic in a synthetic case →</a>
+</section>
+<section id="quickstart" class="quickstart">
+<div>
+<p class="eyebrow">QUICK START</p>
+<h2>Install as a Codex skill</h2>
+<p>The repository root is the skill directory. Users normally do not need to edit JSON manually.</p>
+</div>
+<pre>
+<code>python -m pip install pypdf
+git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu</code>
+</pre>
+</section>
+<section id="faq">
+<div class="section-head">
+<p class="eyebrow">FAQ</p>
+<h2>Common questions</h2>
+</div>
+<div class="faq">
+<details open>
+<summary>Is Mochikabu an ESOP or ESPP calculator?</summary>
+<p>Its primary target is Japanese employee stock ownership and employee shareholding arrangements such as 社員持株会 and 従業員持株会. It does not assume US ESOP or ESPP rules are equivalent.</p>
+</details>
+<details>
+<summary>Does a high incentive automatically mean increase contributions?</summary>
+<p>No. Incentives reduce effective acquisition cost, but valuation, affordability, concentration, lockups and contribution windows still matter.</p>
+</details>
+<details>
+<summary>Does Mochikabu execute trades?</summary>
+<p>No. It supports research, valuation, scenario analysis and contribution decisions, but does not place orders.</p>
+</details>
+</div>
+</section>
+</main>
+<footer>
+<span>Mochikabu · MIT License</span>
+<span>
+<a href="https://github.com/Siyuan-chat/mochikabu">GitHub</a> · <a href="./">日本語</a>
+</span>
+</footer>
+</body>
+</html>

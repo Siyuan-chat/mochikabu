@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>奨励金10%なら持株会を増額すべき？ — Mochikabu Case Study</title>
+<meta name="description" content="持株会の奨励金が10%でも、必ず増額が合理的とは限りません。架空データを使い、株価評価・本人負担取得費用・集中リスクをどう組み合わせるかを示します。">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<link rel="canonical" href="https://siyuan-chat.github.io/mochikabu/case-incentive-vs-valuation.html">
+<link rel="stylesheet" href="./style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"奨励金10%なら持株会を増額すべき？","description":"架空データを使った Mochikabu の判断フロー。","author":{"@type":"Person","name":"Siyuan Ye"},"mainEntityOfPage":"https://siyuan-chat.github.io/mochikabu/case-incentive-vs-valuation.html","inLanguage":"ja"}</script>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="./">Mochikabu</a>
+<nav>
+<a href="./">Home</a>
+<a href="https://github.com/Siyuan-chat/mochikabu">GitHub</a>
+</nav>
+</header>
+<main class="article">
+<p class="eyebrow">SYNTHETIC CASE STUDY</p>
+<h1>奨励金 10% なら、持株会を増額すべき？</h1>
+<p class="lead">結論を「奨励金が高いから増額」で終わらせず、会社の評価、本人負担取得費用、同業比較、資産集中まで順番に確認する例です。</p>
+<p class="note">
+<strong>このページの数値・会社・制度はすべて架空です。</strong> 判断フローの説明用であり、実在企業への投資判断ではありません。</p>
+<h2>1. まず制度だけを見る</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>架空条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>市場株価</td>
+<td>¥5,000</td>
+</tr>
+<tr>
+<td>奨励金率</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>現在の月額拠出</td>
+<td>¥30,000</td>
+</tr>
+<tr>
+<td>候補</td>
+<td>¥30,000 / ¥50,000 / ¥70,000</td>
+</tr>
+</tbody>
+</table>
+<p>税や手数料を無視した単純化では、10% の奨励金が付くと本人負担ベースの取得コストは市場株価より低くなります。</p>
+<pre>
+<code>PersonalPurchaseCost = MarketPrice / (1 + EffectiveIncentive)
+¥5,000 / 1.10 ≈ ¥4,545</code>
+</pre>
+<p>ここだけなら「有利」に見えます。しかし、これだけでは増額を決めません。</p>
+<h2>2. 次に会社そのものを評価する</h2>
+<p>架空の公開財務情報から DCF 中心値が ¥4,600、感応度レンジが ¥4,100–¥5,200 だったとします。市場株価 ¥5,000 は中心値を約 8.7% 上回ります。</p>
+<p>一方、奨励金調整後の本人負担取得コスト約 ¥4,545 は DCF 中心値に近くなります。つまり「市場ではやや割高でも、制度を通した本人負担では評価が変わる」という状態です。</p>
+<h2>3. DCF だけで決めない</h2>
+<p>同業比較で対象会社が peers より高い PER / PBR を持つ場合、そのプレミアムが成長率や収益性で説明できるかを確認します。DCF と相対評価を一つの数値に混ぜず、食い違いを残します。</p>
+<h2>4. 最後に、勤務先への集中を見る</h2>
+<p>持株会では給与・賞与・キャリアと金融資産が同じ会社に依存しやすくなります。すでに金融資産の大きな割合を勤務先株式が占めるなら、奨励金があっても追加増額が最適とは限りません。</p>
+<h2>5. 結論は条件付きになる</h2>
+<p>
+<strong>「10% 奨励金だから増額」ではなく、「奨励金込みの取得コストは魅力的だが、評価プレミアムと集中度を確認してから増額幅を決める」が適切な表現になります。</strong>
+</p>
+<h2>なぜこの設計なのか</h2>
+<p>持株会では「会社は良いか」「株価は高いか」「制度は有利か」「自分の資産配分に合うか」が別の問題です。Mochikabu はこの四つを混ぜず、最後に同じ意思決定へ接続します。</p>
+<p>
+<a href="./">Mochikabu の概要に戻る</a> · <a href="https://github.com/Siyuan-chat/mochikabu/blob/main/docs/valuation.ja.md">評価方法の詳細</a>
+</p>
+</main>
+<footer>
+<span>Mochikabu · Synthetic example</span>
+<span>
+<a href="https://github.com/Siyuan-chat/mochikabu">GitHub</a>
+</span>
+</footer>
+</body>
+</html>
