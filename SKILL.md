@@ -1,11 +1,11 @@
 ---
 name: mochikabu
-description: Analyze employee stock ownership plans for any company. Use for holdings screenshots, contribution reviews, public financial-report and latest-quote retrieval, DCF and peer-relative fair-value comparison, purchase/contribution judgment, incentive and dividend reinvestment modeling, and share or cost targets established through conversation. All monetary inputs and outputs are in Japanese yen (JPY).
+description: Analyze Japanese employee stock ownership and employee shareholding plans (社員持株会 / 従業員持株会) for any company. Use when a user asks whether to increase, maintain, reduce, or pause contributions; for holdings screenshots; plan incentive and dividend-reinvestment modeling; public financial-report and latest-quote retrieval; DCF and peer-relative valuation; employer-stock concentration review; or share and cost targets established through conversation. Treat Japanese plan rules as plan-specific rather than assuming US ESOP/ESPP rules. All monetary inputs and outputs are in Japanese yen (JPY).
 ---
 
 # mochikabu
 
-Support company-specific employee stock ownership plan (社員持株会) decisions. Identify the company, market and plan rules from the user's inputs rather than assuming a particular employer.
+Support company-specific Japanese employee stock ownership / employee shareholding plan (社員持株会・従業員持株会) decisions. Identify the company, market and actual plan rules from the user's inputs rather than assuming a particular employer or treating US ESOP/ESPP rules as equivalent.
 
 ## Inputs and boundaries
 

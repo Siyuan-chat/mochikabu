@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use Mochikabu in research, documentation, or a derived project, please cite this repository."
+title: "Mochikabu: AI Agent Skill for Japanese Employee Stock Ownership Plans"
+type: software
+authors:
+  - family-names: "Ye"
+    given-names: "Siyuan"
+repository-code: "https://github.com/Siyuan-chat/mochikabu"
+url: "https://github.com/Siyuan-chat/mochikabu"
+license: MIT
+keywords:
+  - AI agent
+  - agent skill
+  - employee stock ownership plan
+  - employee shareholding
+  - Japanese employee stock plan
+  - 社員持株会
+  - 従業員持株会
+  - DCF valuation
+  - stock valuation
+  - contribution planning
