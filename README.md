@@ -1,14 +1,72 @@
-# mochikabu
+# Mochikabu — 社員持株会・従業員持株会のための AI Agent Skill
 
-**対話から始める、社員持株会のための AI エージェント用スキル。**
+**公開情報から会社を評価し、奨励金・配当再投資・自社株集中リスクまで含めて、持株会の拠出額を検討するオープンソース AI エージェントスキル。**
 
-[English](README.en.md) · [使い方](docs/usage.ja.md) · [評価方法](docs/valuation.ja.md) · [スクリプト仕様（English）](references/public-research.md)
+Mochikabu is an open-source AI agent skill for Japanese employee stock ownership / employee shareholding plans（社員持株会・従業員持株会）. It combines public financial data, DCF valuation, peer comparison, employee incentives, dividend reinvestment, and contribution planning.
 
-特定の会社に依存せず、公開財務情報、最新の株価、同業他社の評価、持株会の奨励金を組み合わせて、買付・拠出額の検討を支援します。金額はすべて **日本円（JPY）** です。
+[English](README.en.md) · [使い方](docs/usage.ja.md) · [評価方法](docs/valuation.ja.md) · [スクリプト仕様 (English)](references/public-research.md)
 
-ユーザーは会社名、現在の拠出額、保有状況、目的などをエージェントと話すだけです。エージェントが不足情報を確認し、公開資料を調べ、設定ファイルを作成してスクリプトを実行します。通常の利用で JSON の編集は必要ありません。
+> **Not just a contribution calculator.** Mochikabu evaluates the company first, then evaluates the employee stock plan.
 
-## できること
+## Mochikabu でできること
+
+一般的な持株会シミュレーションが奨励金や積立結果の計算を中心とするのに対し、Mochikabu は「その会社の株を、現在の評価水準で、勤務先への資産集中も考慮しながら、どの程度買うか」という判断まで一つのワークフローで扱います。
+
+| 項目 | Mochikabu |
+| --- | --- |
+| 持株会の保有株数・取得費用の整理 | ✓ |
+| 奨励金・賞与拠出・配当再投資の試算 | ✓ |
+| 最新株価と出典・時刻の確認 | ✓ |
+| DCF によるフェアバリュー推定 | ✓ |
+| PER / PBR / EV/EBITDA と同業比較 | ✓ |
+| 株価とフェアバリューの感応度分析 | ✓ |
+| 勤務先への資産集中リスクの確認 | ✓ |
+| 増額・維持・減額・一時停止の検討 | ✓ |
+| 自動売買・注文執行 | — |
+
+### こんな質問に使えます
+
+- 「持株会の奨励金が 10% なら、月額拠出を増やすべき？」
+- 「自社株は DCF や同業比較で割高・割安？」
+- 「月 3 万円と 5 万円では、目標時点の保有株数と自己負担取得費用はどう変わる？」
+- 「給与も資産も勤務先に集中しすぎていない？」
+- 「株価がフェアバリューを上回っていても、奨励金を考えると買付は合理的？」
+- 「次の持株会変更時期まで、増額・維持・減額のどれが妥当？」
+
+## Quick start
+
+Python 3.10 以降を使用します。評価・試算・テストは標準ライブラリで動作します。PDF のテキスト抽出には `pypdf` を使用します。
+
+```bash
+python -m pip install pypdf
+git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu
+```
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/Siyuan-chat/mochikabu.git "$env:USERPROFILE\.codex\skills\mochikabu"
+```
+
+このリポジトリ全体が `mochikabu` スキルです。利用するエージェントのスキル保存先に配置し、例えば次のように依頼します。
+
+> $mochikabu を使って、勤務先の持株会の拠出額を検討したいです。会社名は〇〇、現在の月額拠出は〇〇円です。まず必要な情報を対話で確認してください。
+
+ユーザーは通常 JSON を編集する必要はありません。エージェントが会社、現在の拠出額、保有状況、制度ルール、目的を確認し、公開資料を調べ、設定ファイルを作成してスクリプトを実行します。
+
+## 処理の流れ
+
+```text
+ユーザーとの対話・持株会資料
+    → 会社・保有状況・制度・目標の確認
+    → 公開決算資料と株価の取得
+    → 財務数値と前提の整理
+    → DCF・同業比較・プレミアム率の計算
+    → 拠出額別のシミュレーション
+    → 予算・集中リスク・制度制約を含む拠出判断
+```
+
+## 主な機能
 
 - 持株会画面の読み取り、保有株数・取得費用の整理、株式分割の調整。
 - 対象企業と同業他社の公開決算資料の取得、PDF・XBRL の情報抽出。
@@ -18,55 +76,21 @@
 - 奨励金、賞与拠出、配当再投資を考慮した拠出額別の保有株数・自己負担取得費用の試算。
 - 予算、勤務先への資産集中、変更可能時期を踏まえた増額・維持・減額等の検討。
 
-## 処理の流れ
-
-```text
-ユーザーとの対話・持株会資料
-    → 会社・保有状況・制度・目標の確認
-    → 公開決算資料と株価の取得
-    → エージェントによる財務数値と前提の整理
-    → DCF・同業比較・プレミアム率の計算
-    → 拠出額別の試算
-    → 根拠と条件を示した買付・拠出判断
-```
+## リポジトリ構成
 
 | ファイル | 役割 |
 | --- | --- |
-| `SKILL.md` | エージェントの対話・調査・判断手順（English） |
+| `SKILL.md` | エージェントの対話・調査・判断手順 (English) |
 | `scripts/fetch_public.py` | 公開資料と最新株価の取得 |
 | `scripts/value_public.py` | DCF、同業比較、評価上の買付シグナル |
 | `scripts/analyze.py` | 拠出額別の持株会シミュレーション |
-| `references/` | 財務データ仕様、計算式、判断条件（English） |
+| `references/` | 財務データ仕様、計算式、判断条件 (English) |
 | `examples/` | 架空企業・架空口座のサンプル |
 | `tests/` | 外部通信を必要としない検証 |
 
-## 導入
-
-Python 3.10 以降を使用します。評価・試算・テストは標準ライブラリで動作します。PDF のテキスト抽出には `pypdf` を使用します。未導入の場合は原本を保存し、エージェントによる読取が必要な状態として報告します。
-
-```bash
-python -m pip install pypdf
-```
-
-このリポジトリ全体が `mochikabu` スキルです。利用するエージェントのスキル保存先に配置してください。ユーザー用の Codex スキルとして配置する例：
-
-```bash
-git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu
-```
-
-Windows PowerShell の例：
-
-```powershell
-git clone https://github.com/Siyuan-chat/mochikabu.git "$env:USERPROFILE\.codex\skills\mochikabu"
-```
-
-エージェントからスキルが参照できる状態で、次のように依頼します。
-
-> $mochikabu を使って、勤務先の持株会の拠出額を検討したいです。会社名は〇〇、現在の月額拠出は〇〇円です。まず必要な情報を対話で確認してください。
-
 ## スクリプトの実行
 
-通常はエージェントが次の入力を生成します。手動実行の詳細は [使い方](docs/usage.ja.md) と [データ仕様](references/public-research.md) を参照してください。
+通常はエージェントが入力ファイルを生成します。手動実行の詳細は [使い方](docs/usage.ja.md) と [データ仕様](references/public-research.md) を参照してください。
 
 ```bash
 python scripts/fetch_public.py --request research_request.json --output-dir research_raw
@@ -74,7 +98,7 @@ python scripts/value_public.py --input financials.json --market-manifest researc
 python scripts/analyze.py --config config.json --holdings holdings_snapshot.json --research valuation.json --output output.json
 ```
 
-オフラインの動作確認：
+オフラインの動作確認:
 
 ```bash
 python -m unittest discover -s tests -v
@@ -93,6 +117,28 @@ python scripts/analyze.py --config examples/config.example.json --holdings examp
 
 実口座、生成設定、取得財報、実行ログは `.gitignore` で除外しています。配布する資料の利用条件も確認してください。
 
-## ライセンス
+## FAQ
 
-[MIT License](LICENSE)。
+### Mochikabu は普通の持株会シミュレーターと何が違いますか？
+
+奨励金や積立結果だけでなく、公開財務情報を使った企業価値評価、同業比較、株価水準、勤務先への資産集中、制度上の変更時期まで同じ判断フローで扱います。
+
+### 奨励金が高ければ、必ず持株会を増額しますか？
+
+いいえ。奨励金は実質的な取得コストを下げますが、株価の割高・割安、予算、自社株への集中、ロックアップや変更可能時期なども確認します。条件が不足する場合は結論を確定しません。
+
+### 日本企業専用ですか？
+
+主な利用対象は日本の社員持株会・従業員持株会です。金額は JPY に統一し、会社や制度ルールはユーザー入力と公開資料から確認します。海外企業を扱う場合も、非 JPY の公開財務情報や株価を日付付き為替レートで JPY に換算してからモデル化します。
+
+### Mochikabu は売買を実行しますか？
+
+いいえ。調査、評価、シミュレーション、拠出判断の支援までを扱い、自動発注や取引執行は行いません。
+
+### 非公開の社内情報を投資判断に使いますか？
+
+いいえ。評価や拠出判断には公開情報を使用します。非公開の勤務先情報を買付・売却・増額のトリガーとして扱いません。
+
+## License
+
+[MIT License](LICENSE).
