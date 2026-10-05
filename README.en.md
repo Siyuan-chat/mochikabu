@@ -31,22 +31,71 @@ Mochikabu is designed for Japanese employee stock ownership and employee shareho
 - “Can an employee stock plan still be attractive when the market price is above estimated fair value?”
 - “Should I increase, maintain, or reduce contributions before the next plan adjustment window?”
 
-## Quick start
+## Install / Quick start
 
-Use Python 3.10 or newer. Valuation, planning, and offline tests use the standard library. PDF text extraction optionally uses `pypdf`.
+The self-contained Agent Skills package lives at `skills/mochikabu/`. It can be installed into Codex, Claude Code, and other compatible agents using the Agent Skills CLI or GitHub CLI.
+
+### Agent Skills CLI
+
+```bash
+npx skills add Siyuan-chat/mochikabu --skill mochikabu
+```
+
+After registry indexing, users can discover it by intent:
+
+```bash
+npx skills find "employee stock ownership"
+npx skills find "employee shareholding Japan"
+```
+
+### GitHub CLI
+
+Codex:
+
+```bash
+gh skill install Siyuan-chat/mochikabu mochikabu --agent codex --scope user
+```
+
+Claude Code:
+
+```bash
+gh skill install Siyuan-chat/mochikabu mochikabu --agent claude-code --scope user
+```
+
+After publication, GitHub skill search can also discover the package:
+
+```bash
+gh skill search "employee stock ownership"
+gh skill search "employee shareholding"
+```
+
+### DSH / shared Agent Skills directory
+
+For DSH or another host that reads `~/.agents/skills/`, copy only the packaged skill directory:
+
+```bash
+git clone --depth 1 https://github.com/Siyuan-chat/mochikabu.git /tmp/mochikabu
+mkdir -p ~/.agents/skills
+cp -R /tmp/mochikabu/skills/mochikabu ~/.agents/skills/mochikabu
+```
+
+For a DSH-only installation, place the same directory at `~/.dsh/skills/mochikabu`.
+
+Use Python 3.10 or newer. Valuation and planning use the standard library. PDF text extraction optionally uses `pypdf`.
 
 ```bash
 python -m pip install pypdf
-git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu
 ```
 
-The repository root is the skill directory. Place it in the skill location supported by your agent, then invoke `$mochikabu` and describe your company, current contribution, holdings, and goal.
+Then invoke `$mochikabu` and describe your company, current contribution, holdings, and goal.
 
 For example:
 
 > Use $mochikabu to review my employee stock ownership plan. My employer is [company], my current monthly contribution is ¥[amount], and I want you to first ask for any missing information.
 
 Users normally do not need to edit JSON. The agent establishes the company, holdings, plan rules, budget, and goals through conversation, gathers public evidence, creates the configuration, and runs the analysis.
+
+The repository root remains the development source; `skills/mochikabu/` is the portable distribution unit for agent installers.
 
 ## Workflow
 
