@@ -1,0 +1,240 @@
+{
+  "company_name": "Example Company (fictional)",
+  "currency": "JPY",
+  "ticker": "EXAMPLE",
+  "as_of": "2026-09-30",
+  "holdings": {
+    "as_of": "2026-09-30",
+    "shares_current_basis": 21.0,
+    "personal_contribution": 20000.0,
+    "company_incentive": 1000.0,
+    "purchase_amount": 21000.0,
+    "residual_cash": 0.0,
+    "personal_cash_cost_per_share": 952.3809523809524,
+    "accounting_purchase_cost_per_share": 1000.0,
+    "validation_warnings": []
+  },
+  "valuation": {
+    "pv_forecast_fcf_billion": 2.821597317482091,
+    "pv_terminal_value_billion": 16.19417771681146,
+    "terminal_value_share_of_ev": 0.8516180743412484,
+    "enterprise_value_billion": 19.01577503429355,
+    "equity_value_billion": 17.01577503429355,
+    "fair_value_per_share": 850.7887517146775,
+    "sensitivity": {
+      "wacc_0.0700": {
+        "g_0.0150": 947.6103510429649,
+        "g_0.0200": 1042.8945759454973,
+        "g_0.0250": 1159.353073048592
+      },
+      "wacc_0.0750": {
+        "g_0.0150": 859.4375338020551,
+        "g_0.0200": 938.1041349132211,
+        "g_0.0250": 1032.5040562466197
+      },
+      "wacc_0.0800": {
+        "g_0.0150": 784.8396116914632,
+        "g_0.0200": 850.7887517146775,
+        "g_0.0250": 928.728644469385
+      },
+      "wacc_0.0850": {
+        "g_0.0150": 720.9075216231874,
+        "g_0.0200": 776.9155625109245,
+        "g_0.0250": 842.2582768799506
+      },
+      "wacc_0.0900": {
+        "g_0.0150": 665.5079538759362,
+        "g_0.0200": 713.6039534911683,
+        "g_0.0250": 769.0993376625897
+      }
+    },
+    "mode": "dcf"
+  },
+  "policy_thresholds": {
+    "margin_of_safety": 0.2,
+    "target_personal_cash_cost_per_share": 680.6310013717421,
+    "marginal_target_market_price": 714.6625514403291,
+    "target_shares_min": 100.0,
+    "target_shares_max_soft": 200.0
+  },
+  "market": {
+    "current_price": 1000
+  },
+  "scenario_grid": [
+    {
+      "avg_price": 680.6310013717421,
+      "monthly": 5000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 177.2518164872076,
+      "final_personal_cash": 120000.0,
+      "final_personal_cash_cost_per_share": 677.0029350230128,
+      "cumulative_company_incentive_effective": 6000.0,
+      "cumulative_dividend_cash_reinvested": 1349.8303218417886,
+      "minimum_share_goal": true,
+      "cost_goal": true,
+      "soft_band": true
+    },
+    {
+      "avg_price": 850.7887517146775,
+      "monthly": 5000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 145.78265929031744,
+      "final_personal_cash": 120000.0,
+      "final_personal_cash_cost_per_share": 823.1431679472055,
+      "cumulative_company_incentive_effective": 6000.0,
+      "cumulative_dividend_cash_reinvested": 1163.682933247075,
+      "minimum_share_goal": true,
+      "cost_goal": false,
+      "soft_band": true
+    },
+    {
+      "avg_price": 1020.9465020576129,
+      "monthly": 5000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 124.86404657669391,
+      "final_personal_cash": 120000.0,
+      "final_personal_cash_cost_per_share": 961.0452591434612,
+      "cumulative_company_incentive_effective": 6000.0,
+      "cumulative_dividend_cash_reinvested": 1039.635042024587,
+      "minimum_share_goal": true,
+      "cost_goal": false,
+      "soft_band": true
+    },
+    {
+      "avg_price": 680.6310013717421,
+      "monthly": 10000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 270.7212699752026,
+      "final_personal_cash": 180000.0,
+      "final_personal_cash_cost_per_share": 664.8904979519621,
+      "cumulative_company_incentive_effective": 9000.0,
+      "cumulative_dividend_cash_reinvested": 1968.0380470452606,
+      "minimum_share_goal": true,
+      "cost_goal": true,
+      "soft_band": false
+    },
+    {
+      "avg_price": 850.7887517146775,
+      "monthly": 10000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 220.41268316871262,
+      "final_personal_cash": 180000.0,
+      "final_personal_cash_cost_per_share": 816.6499196519505,
+      "cumulative_company_incentive_effective": 9000.0,
+      "cumulative_dividend_cash_reinvested": 1658.0677891834964,
+      "minimum_share_goal": true,
+      "cost_goal": false,
+      "soft_band": false
+    },
+    {
+      "avg_price": 1020.9465020576129,
+      "monthly": 10000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 186.97492752536806,
+      "final_personal_cash": 180000.0,
+      "final_personal_cash_cost_per_share": 962.6959206901057,
+      "cumulative_company_incentive_effective": 9000.0,
+      "cumulative_dividend_cash_reinvested": 1451.5216862902957,
+      "minimum_share_goal": true,
+      "cost_goal": false,
+      "soft_band": true
+    },
+    {
+      "avg_price": 680.6310013717421,
+      "monthly": 15000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 364.1907234631975,
+      "final_personal_cash": 240000.0,
+      "final_personal_cash_cost_per_share": 658.9953684645476,
+      "cumulative_company_incentive_effective": 12000.0,
+      "cumulative_dividend_cash_reinvested": 2586.245772248733,
+      "minimum_share_goal": true,
+      "cost_goal": true,
+      "soft_band": false
+    },
+    {
+      "avg_price": 850.7887517146775,
+      "monthly": 15000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 295.04270704710774,
+      "final_personal_cash": 240000.0,
+      "final_personal_cash_cost_per_share": 813.4415603829198,
+      "cumulative_company_incentive_effective": 12000.0,
+      "cumulative_dividend_cash_reinvested": 2152.4526451199176,
+      "minimum_share_goal": true,
+      "cost_goal": false,
+      "soft_band": false
+    },
+    {
+      "avg_price": 1020.9465020576129,
+      "monthly": 15000.0,
+      "bonus": 20000.0,
+      "months": 12,
+      "bonus_count": 2,
+      "dividend_events": 2,
+      "final_shares": 249.0858084740422,
+      "final_personal_cash": 240000.0,
+      "final_personal_cash_cost_per_share": 963.5233796348978,
+      "cumulative_company_incentive_effective": 12000.0,
+      "cumulative_dividend_cash_reinvested": 1863.408330556005,
+      "minimum_share_goal": true,
+      "cost_goal": false,
+      "soft_band": false
+    }
+  ],
+  "decision": {
+    "selected_monthly": 5000.0,
+    "rationale": "selected by robust goal coverage",
+    "candidate_scores": [
+      {
+        "monthly": 5000.0,
+        "goal_success_scenarios": 1,
+        "in_target_band_success_scenarios": 1
+      },
+      {
+        "monthly": 10000.0,
+        "goal_success_scenarios": 1,
+        "in_target_band_success_scenarios": 0
+      },
+      {
+        "monthly": 15000.0,
+        "goal_success_scenarios": 1,
+        "in_target_band_success_scenarios": 0
+      }
+    ],
+    "role": "scenario_score_requires_agent_review",
+    "current_price_vs_fair_value": 0.17537990245475465,
+    "current_marginal_personal_cost": 952.3809523809523,
+    "current_price_is_below_marginal_target_threshold": false
+  },
+  "public_research": null,
+  "notes": [
+    "Scenario prices are constant-average planning cases, not forecasts.",
+    "Dividend timing is approximate and configurable.",
+    "Refresh all DCF inputs from public IR before an actual contribution change."
+  ]
+}
