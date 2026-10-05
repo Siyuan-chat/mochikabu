@@ -1,0 +1,31 @@
+# Mochikabu
+
+Mochikabu is an open-source AI agent skill for Japanese employee stock ownership and employee shareholding plans (社員持株会 / 従業員持株会).
+
+Primary purpose:
+- evaluate the employer using public financial evidence;
+- estimate DCF fair value and sensitivity;
+- compare peer valuation metrics;
+- model employee incentives, bonus contributions and dividend reinvestment;
+- review employer-stock concentration and plan constraints;
+- support increase / maintain / reduce / pause contribution decisions.
+
+Important boundaries:
+- monetary inputs and outputs are normalized to JPY;
+- Japanese plan rules are plan-specific and are not assumed equivalent to US ESOP or ESPP rules;
+- non-public employer information must not trigger a buy, sell or contribution increase;
+- Mochikabu does not execute trades;
+- missing or stale evidence remains OPEN or partial rather than being invented.
+
+Canonical project:
+https://github.com/Siyuan-chat/mochikabu
+
+Documentation:
+https://github.com/Siyuan-chat/mochikabu/blob/main/README.md
+https://github.com/Siyuan-chat/mochikabu/blob/main/README.en.md
+https://github.com/Siyuan-chat/mochikabu/blob/main/SKILL.md
+https://github.com/Siyuan-chat/mochikabu/blob/main/docs/usage.ja.md
+https://github.com/Siyuan-chat/mochikabu/blob/main/docs/valuation.ja.md
+
+Landing page:
+https://siyuan-chat.github.io/mochikabu/

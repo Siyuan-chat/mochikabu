@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mochikabu — 社員持株会・従業員持株会のための AI Agent Skill</title>
+<meta name="description" content="Mochikabu は、公開財務情報、DCF、同業比較、奨励金、配当再投資、自社株集中リスクから社員持株会・従業員持株会の拠出判断を支援するオープンソース AI Agent Skill です。">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<link rel="canonical" href="https://siyuan-chat.github.io/mochikabu/">
+<link rel="alternate" hreflang="ja" href="https://siyuan-chat.github.io/mochikabu/">
+<link rel="alternate" hreflang="en" href="https://siyuan-chat.github.io/mochikabu/en.html">
+<link rel="stylesheet" href="./style.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mochikabu — AI Agent Skill for Japanese Employee Stock Ownership Plans">
+<meta property="og:description" content="会社を評価してから、持株会を評価する。">
+<meta property="og:url" content="https://siyuan-chat.github.io/mochikabu/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Mochikabu","description":"Open-source AI agent skill for Japanese employee stock ownership and employee shareholding plans, combining public financial data, DCF valuation, peer comparison, employee incentives, dividend reinvestment and contribution planning.","applicationCategory":"FinanceApplication","operatingSystem":"Cross-platform","softwareRequirements":"Python 3.10+","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"license":"https://opensource.org/license/mit","codeRepository":"https://github.com/Siyuan-chat/mochikabu","url":"https://siyuan-chat.github.io/mochikabu/","inLanguage":["ja","en"],"keywords":["社員持株会","従業員持株会","持株会 AI","employee stock ownership plan Japan","employee shareholding Japan","AI agent skill","DCF valuation","contribution planning"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Mochikabu は普通の持株会シミュレーターと何が違いますか？","acceptedAnswer":{"@type":"Answer","text":"奨励金や積立結果だけでなく、公開財務情報を使った企業価値評価、同業比較、株価水準、勤務先への資産集中、制度上の変更時期まで同じ判断フローで扱います。"}},{"@type":"Question","name":"奨励金が高ければ、必ず持株会を増額しますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。奨励金は実質的な取得コストを下げますが、株価評価、予算、自社株への集中、ロックアップや変更可能時期なども確認します。"}},{"@type":"Question","name":"Mochikabu は売買を実行しますか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。公開情報に基づく調査、評価、シミュレーション、拠出判断の支援を行いますが、自動発注や取引執行は行いません。"}}]}</script>
+</head>
+<body>
+<header class="site-header">
+<a class="brand" href="./">Mochikabu</a>
+<nav>
+<a href="#how">仕組み</a>
+<a href="#questions">質問例</a>
+<a href="#faq">FAQ</a>
+<a href="./case-incentive-vs-valuation.html">Case study</a>
+<a href="./en.html">English</a>
+<a class="nav-cta" href="https://github.com/Siyuan-chat/mochikabu">GitHub</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<p class="eyebrow">OPEN-SOURCE AI AGENT SKILL · JAPANESE EMPLOYEE STOCK PLANS</p>
+<h1>会社を評価してから、<br>持株会を評価する。</h1>
+<p class="lead">Mochikabu は、社員持株会・従業員持株会の拠出額を、公開財務情報、DCF、同業比較、奨励金、配当再投資、自社株集中リスクから検討する AI エージェント用スキルです。</p>
+<div class="actions">
+<a class="button primary" href="https://github.com/Siyuan-chat/mochikabu">GitHub で見る</a>
+<a class="button secondary" href="#quickstart">導入方法</a>
+</div>
+<p class="micro">MIT License · Python 3.10+ · JPY-first · No trade execution</p>
+</section>
+<section class="statement">
+<p class="kicker">Not just a contribution calculator.</p>
+<div>
+<h2>「いくら積み立てるか」の前に、<br>「その株を今いくらで買うか」を見る。</h2>
+<p>一般的な持株会シミュレーションは、奨励金や積立結果の計算が中心です。Mochikabu は企業価値と市場価格を確認し、その上で奨励金、本人負担、予算、勤務先への資産集中を一つの判断フローにまとめます。</p>
+</div>
+</section>
+<section id="how">
+<div class="section-head">
+<p class="eyebrow">HOW IT WORKS</p>
+<h2>評価と制度を分けずに扱う</h2>
+</div>
+<div class="grid">
+<article class="card">
+<span class="num">01</span>
+<h3>状況を確認</h3>
+<p>会社、保有株数、現在の拠出額、奨励金、変更時期、目標を対話から整理します。</p>
+</article>
+<article class="card">
+<span class="num">02</span>
+<h3>公開情報を調査</h3>
+<p>決算資料、株価、比較企業を取得し、期間・単位・連結範囲・株式分割を確認します。</p>
+</article>
+<article class="card">
+<span class="num">03</span>
+<h3>会社を評価</h3>
+<p>DCF の中心値と感応度、PER・PBR・EV/EBITDA、同業比較を別々に示します。</p>
+</article>
+<article class="card">
+<span class="num">04</span>
+<h3>持株会を評価</h3>
+<p>奨励金、配当再投資、本人負担取得費用、候補拠出額、集中リスクを比較します。</p>
+</article>
+</div>
+</section>
+<section>
+<div class="section-head">
+<p class="eyebrow">CAPABILITIES</p>
+<h2>何を分析するか</h2>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>領域</th>
+<th>分析内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Company valuation</td>
+<td>DCF、感応度、公開財務情報</td>
+</tr>
+<tr>
+<td>Relative valuation</td>
+<td>PER / PBR / EV/EBITDA、同業比較</td>
+</tr>
+<tr>
+<td>Employee plan</td>
+<td>奨励金、賞与拠出、配当再投資</td>
+</tr>
+<tr>
+<td>Holdings</td>
+<td>株数、本人負担、取得費用、株式分割</td>
+</tr>
+<tr>
+<td>Risk</td>
+<td>勤務先株式への資産集中、制度制約</td>
+</tr>
+<tr>
+<td>Decision</td>
+<td>増額・維持・減額・一時停止の検討</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="questions">
+<div class="section-head">
+<p class="eyebrow">QUESTIONS</p>
+<h2>こんな問いから始められます</h2>
+</div>
+<div class="questions">
+<p>「奨励金が 10% なら、月額拠出を増やすべき？」</p>
+<p>「自社株は DCF や同業比較で割高・割安？」</p>
+<p>「給与も資産も勤務先に集中しすぎていない？」</p>
+<p>「フェアバリューを上回っていても、奨励金を考えると買付は合理的？」</p>
+</div>
+<a class="text-link" href="./case-incentive-vs-valuation.html">架空ケースで判断フローを見る →</a>
+</section>
+<section id="quickstart" class="quickstart">
+<div>
+<p class="eyebrow">QUICK START</p>
+<h2>Codex skill として導入</h2>
+<p>リポジトリ全体が Mochikabu skill です。ユーザーが通常 JSON を手編集する必要はありません。</p>
+</div>
+<pre>
+<code>python -m pip install pypdf
+git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu</code>
+</pre>
+<p class="prompt">$mochikabu を使って、勤務先の持株会の拠出額を検討したいです。まず必要な情報を対話で確認してください。</p>
+</section>
+<section id="faq">
+<div class="section-head">
+<p class="eyebrow">FAQ</p>
+<h2>よくある質問</h2>
+</div>
+<div class="faq">
+<details open>
+<summary>Mochikabu は普通の持株会シミュレーターと何が違いますか？</summary>
+<p>奨励金や積立結果だけでなく、公開財務情報を使った企業価値評価、同業比較、株価水準、勤務先への資産集中、制度上の変更時期まで同じ判断フローで扱います。</p>
+</details>
+<details>
+<summary>奨励金が高ければ、必ず持株会を増額しますか？</summary>
+<p>いいえ。奨励金は実質的な取得コストを下げますが、株価評価、予算、自社株への集中、ロックアップや変更可能時期なども確認します。</p>
+</details>
+<details>
+<summary>Mochikabu は売買を実行しますか？</summary>
+<p>いいえ。調査、評価、シミュレーション、拠出判断の支援までを扱い、自動発注や取引執行は行いません。</p>
+</details>
+</div>
+</section>
+<section class="boundary">
+<h2>公開情報に基づく意思決定支援</h2>
+<p>Mochikabu は投資成果を保証せず、非公開の勤務先情報を買付・売却・増額のトリガーとして扱いません。DCF は推定値であり、情報不足は <code>OPEN</code> または <code>partial</code> として残します。</p>
+<p>
+<a href="https://github.com/Siyuan-chat/mochikabu/blob/main/docs/valuation.ja.md">評価方法</a> · <a href="https://github.com/Siyuan-chat/mochikabu/blob/main/docs/usage.ja.md">利用ガイド</a>
+</p>
+</section>
+</main>
+<footer>
+<span>Mochikabu · MIT License</span>
+<span>
+<a href="https://github.com/Siyuan-chat/mochikabu">GitHub</a> · <a href="./en.html">English</a>
+</span>
+</footer>
+</body>
+</html>
