@@ -72,3 +72,11 @@ python scripts/analyze.py --config examples/config.example.json --holdings examp
 ```
 
 テストは外部サービスへのアクセスを必要としません。サンプルの制度・財務・口座は架空です。実データ、ダウンロードした財報、設定、ログは Git の追跡対象から除外されています。保存先を変更する際は除外設定も確認してください。
+
+### Windows での呼び出し
+
+通常のチャットでは会社名と毎月の拠出額を伝えます。CLI では作業用フォルダーから次のように実行すると、起動時にインストール済みスキルを読み込みます。
+
+```powershell
+& "$HOME/.agents/skills/mochikabu/scripts/ask_mochikabu.ps1" '毎月の拠出を維持するか、減らすか相談したい'
+```

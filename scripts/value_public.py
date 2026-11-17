@@ -104,6 +104,20 @@ def evaluate(request, manifest, now=None):
     market = market_for(company, manifest, now, age_limit)
     target_multiples = multiples(company, market)
     valuation = fair_value(company)
+    if valuation["status"] == "MODELED":
+        low, high = valuation["sensitivity_range"]
+        base = valuation["fair_value_per_share"]
+        metadata = company.get("valuation_metadata", {})
+        bear, bull = metadata.get("bear_fv"), metadata.get("bull_fv")
+        if bear is not None and (not positive(bear) or bear > base):
+            raise ValueError("Invalid bear FV")
+        if bull is not None and (not positive(bull) or bull < base):
+            raise ValueError("Invalid bull FV")
+        valuation.update(base_fv=base, bear_fv=bear, bull_fv=bull,
+                         central_method="fcff_dcf", sensitivity_low=low, sensitivity_high=high,
+                         as_of=metadata.get("as_of", now.date().isoformat()),
+                         model_version=metadata.get("model_version", "fcff_dcf_v1"),
+                         confidence=metadata.get("confidence", "OPEN"))
     rows = []
     for peer in peers:
         quote = market_for(peer, manifest, now, age_limit)
@@ -111,11 +125,30 @@ def evaluate(request, manifest, now=None):
         ratio = quote["current_price"] / fv["fair_value_per_share"] if quote.get("status") == "PUBLIC" and fv.get("status") == "MODELED" else None
         rows.append({"id": peer["id"], "name": peer.get("name"), "selection_reason": peer.get("selection_reason"),
                      "market": quote, "multiples": multiples(peer, quote), "valuation": fv, "price_to_fair_value": ratio})
+    # The Japanese exchange session date, including quotes timestamped in UTC.
+    def trading_day(quote):
+        stamp = dt.datetime.fromisoformat(quote["price_as_of"].replace("Z", "+00:00"))
+        return stamp.astimezone(dt.timezone(dt.timedelta(hours=9))).date().isoformat()
+
+    def pe_check(entity, quote):
+        pe = multiples(entity, quote).get("pe")
+        day = trading_day(quote) if quote.get("status") == "PUBLIC" else None
+        site = entity.get("market_site_pe", {})
+        matched = bool(day and site.get("date") == day and site.get("source_url") and positive(site.get("value")))
+        return {"id": entity["id"], "date": day, "price": quote.get("current_price"),
+                "price_source": quote.get("source_url"), "eps": usable_financial(entity, "eps"),
+                "eps_evidence": entity.get("evidence", {}).get("eps"), "calculated_pe": pe,
+                "website": site or None, "difference": pe - site["value"] if matched and pe is not None else None}
+
+    checks = [pe_check(company, market)] + [pe_check(peer, row["market"]) for peer, row in zip(peers, rows)]
     comparisons = {}
     fields = {"pe": "eps", "pb": "bps", "ev_ebitda": "ebitda"}
     for metric, field in fields.items():
         basis = company.get("metric_basis", {}).get(metric)
         comparable = [row for row, peer in zip(rows, peers) if basis and peer.get("metric_basis", {}).get(metric) == basis and peer.get("selection_reason") and metric in row["multiples"]]
+        if metric == "pe":
+            comparable = [row for row in comparable if market.get("status") == "PUBLIC"
+                          and trading_day(row["market"]) == trading_day(market)]
         eligible_ids = [row["id"] for row in comparable]
         if len(comparable) < minimum_peers or metric not in target_multiples:
             comparisons[metric] = {"status": "OPEN", "eligible_peer_ids": eligible_ids, "reason": "Requires target metric and at least three justified peers with matching metric basis"}
@@ -169,7 +202,7 @@ def evaluate(request, manifest, now=None):
         signal = {"status": "SYNTHETIC", "action": "example_only", "simulated_signal": signal}
     return {"currency": "JPY", "as_of": now.isoformat(), "company_id": company["id"], "market": market,
             "policy": request.get("policy", {}), "max_quote_age_hours": age_limit,
-            "valuation": valuation, "peers": rows, "peer_multiple_comparison": comparisons,
+            "pe_reconciliation": checks, "valuation": valuation, "peers": rows, "peer_multiple_comparison": comparisons,
             "peer_fair_value_premium": comparison, "purchase_signal": signal,
             "status": "completed" if signal["status"] == "INDICATIVE" else "partial"}
 

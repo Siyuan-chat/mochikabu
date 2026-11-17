@@ -26,7 +26,11 @@ git clone https://github.com/Siyuan-chat/mochikabu.git ~/.codex/skills/mochikabu
 
 The repository root is the skill directory. Place it in the skill location supported by your agent, then invoke `$mochikabu` and describe your company and current contribution. See [SKILL.md](SKILL.md) for the agent workflow.
 
-## Agent-generated pipeline
+## Contribution decision
+
+The agent selects a registered model and identifies disclosed financial facts. The versioned runner calculates both valuation bounds and the contribution action. Run `python scripts/review_contribution.py case.json --final --output decision.json`. The input contract and public pass are in [review-input.md](references/review-input.md).
+
+## Data collection and offline scenario tools
 
 ```bash
 python scripts/fetch_public.py --request research_request.json --output-dir research_raw

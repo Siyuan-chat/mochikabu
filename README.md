@@ -24,7 +24,7 @@
 ユーザーとの対話・持株会資料
     → 会社・保有状況・制度・目標の確認
     → 公開決算資料と株価の取得
-    → エージェントによる財務数値と前提の整理
+    → エージェントが開示数値を識別し、登録済みモデルを選択
     → DCF・同業比較・プレミアム率の計算
     → 拠出額別の試算
     → 根拠と条件を示した買付・拠出判断
@@ -64,7 +64,11 @@ git clone https://github.com/Siyuan-chat/mochikabu.git "$env:USERPROFILE\.codex\
 
 > $mochikabu を使って、勤務先の持株会の拠出額を検討したいです。会社名は〇〇、現在の月額拠出は〇〇円です。まず必要な情報を対話で確認してください。
 
-## スクリプトの実行
+## 毎月の拠出額を判断する場合
+
+`python scripts/review_contribution.py case.json --final --output decision.json` を実行します。利益の調整、再投資、年度別のキャッシュフロー、評価範囲、拠出額の判断はすべて固定モデルが計算します。入力項目は [実行仕様](references/review-input.md) を参照してください。
+
+## 資料の取得と個別シミュレーション
 
 通常はエージェントが次の入力を生成します。手動実行の詳細は [使い方](docs/usage.ja.md) と [データ仕様](references/public-research.md) を参照してください。
 

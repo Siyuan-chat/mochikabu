@@ -1,0 +1,70 @@
+{
+  "market_date": "2026-11-16",
+  "target": {
+    "ticker": "5706",
+    "overlap": "高频PCB用VSP电解铜箔、载体极薄MicroThin，集团兼营冶炼。",
+    "product_url": "https://em.mitsui-kinzoku.com/copper-foil/products/high-speed-copper-foil/",
+    "close": 1409.5,
+    "close_date": "2026-11-16",
+    "close_url": "https://s.minkabu.jp/stock/5706/daily_bar",
+    "eps": 136.34,
+    "filing_date": "2026-11-10",
+    "filing_url": "https://www2.jpx.co.jp/disc/57060/140120261106567263.pdf",
+    "fiscal_year_end": "2027-03-31",
+    "site_pe": 10.34,
+    "site_url": "https://s.kabutan.jp/stocks/5706/historical_valuations/daily/",
+    "site_date": "2026-11-16"
+  },
+  "peers": [
+    {
+      "ticker": "5016",
+      "overlap": "JX低粗糙度压延及FPC用电解箔，另有半导体材料与冶炼；非纯PCB铜箔。",
+      "product_url": "https://www.jx-nmm.com/products/copper_foil_and_alloy/rolled_copper_foil/surface_treatment.html",
+      "close": 2305.5,
+      "close_date": "2026-11-16",
+      "close_url": "https://minkabu.jp/stock/5016/daily_bar",
+      "eps": 176.74,
+      "filing_date": "2026-11-09",
+      "filing_url": "https://japanir.jp/wp-content/uploads/2026/11/5016-20261109-03.pdf",
+      "fiscal_year_end": "2027-03-31",
+      "site_pe": 12.88,
+      "site_url": "https://www.traders.co.jp/stocks/61_5016/",
+      "site_date": "2026-11-16",
+      "site_basis": "2026-11-16 15:30 Traders Web uses EPS 179.00. Issuer fiscal-year forecast EPS is 176.74."
+    },
+    {
+      "ticker": "5801",
+      "overlap": "古河电工仍直接列示高频电解铜箔；光通信显著影响集团盈利。",
+      "product_url": "https://www.furukawaelectric.com/release/2026/comm_20261109.html",
+      "close": 1982.5,
+      "close_date": "2026-11-16",
+      "close_url": "https://s.kabutan.jp/stocks/5801/historical_prices/daily/",
+      "eps": 167.71,
+      "filing_date": "2026-11-09",
+      "filing_url": "https://www.furukawaelectric.com/ir/library/finalreport/pdf/2027/20261109.pdf",
+      "fiscal_year_end": "2027-03-31",
+      "site_pe": 11.82,
+      "site_url": "https://www.traders.co.jp/stocks/61_5801/",
+      "site_date": "2026-11-16"
+    }
+  ],
+  "peer_exclusions": [
+    {
+      "name": "台湾金居8358",
+      "source_url": "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=21447bfe-41b6-4a1d-b64a-8b151849da16",
+      "reason": "电解箔直接对手，年度为12月结账，未取得和日本两家同年度的发行人EPS预告。仅用于利润率。"
+    },
+    {
+      "name": "日本电解",
+      "source_url": "https://www.nippon-denkai.co.jp/english/about/",
+      "reason": "新公司于2025年4月承接业务，未取得对应上市普通股与预测EPS。"
+    }
+  ],
+  "disclosure_check": {
+    "checked_through": "2026-11-17",
+    "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+    "changes_and_model_impact": "11月10日中报更新集团盈利及净债、披露新厂190及FY2031开始投产；11月17日东京午间采用11月16日收盘。"
+  },
+  "guidance_url": "https://www2.jpx.co.jp/disc/57060/140120261106567263.pdf",
+  "project_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=g%2F1XYEdOfgg%3D&mid=1060&tabid=123"
+}

@@ -115,6 +115,22 @@ class PublicResearchTests(unittest.TestCase):
             self.assertNotEqual(mismatch.returncode, 0)
             self.assertIn("policy differ", mismatch.stderr)
 
+            config["position"] = {"lifecycle_state": "former_employee", "thesis_status": "intact"}
+            config["valuation_policy"] = {"accumulation_bands": {"extreme": .65, "strong": .75, "normal": .9},
+                                          "trim_bands": {"watch": 1.1, "partial": 1.4, "major": 1.7}}
+            manifest["companies"][0]["market"]["current_price"] = 1500
+            for name, data in (("config", config), ("manifest", manifest)):
+                (path / (name + ".json")).write_text(json.dumps(data))
+            subprocess.run(command + ["--market-manifest", str(path / "manifest.json")], check=True, capture_output=True)
+            updated = json.loads((path / "output.json").read_text())
+            self.assertEqual(updated["valuation"]["as_of"], out["valuation"]["as_of"])
+            self.assertEqual(updated["valuation"]["base_fv"], out["valuation"]["base_fv"])
+            self.assertEqual(updated["scenario_grid"], [])
+            position = updated["decision"]["position_policy"]
+            self.assertEqual(position["holding_state"], "PARTIAL_TRIM")
+            self.assertEqual(position["effective_price"], 1500)
+            self.assertIsNone(position["contribution_state"])
+
 
 if __name__ == "__main__":
     unittest.main()

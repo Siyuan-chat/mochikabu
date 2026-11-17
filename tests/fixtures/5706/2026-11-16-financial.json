@@ -1,0 +1,256 @@
+{
+  "model": "expansion_fcff_v1",
+  "ticker": "5706",
+  "market_date": "2026-11-16",
+  "fiscal_end_anchor": "2027-03-31",
+  "first_forecast_fy": 2027,
+  "periods": [
+    2024,
+    2025,
+    2026
+  ],
+  "base_period": 2025,
+  "normalized_group": [
+    57.7,
+    106.4,
+    88.7
+  ],
+  "sources": {
+    "project": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=g%2F1XYEdOfgg%3D&mid=1060&tabid=123",
+    "plan": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144",
+    "current": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159",
+    "product_sales": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+    "growth_targets": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=g%2F1XYEdOfgg%3D&mid=1060&tabid=123",
+    "normalized_group": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159",
+    "history_capex_definition": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+    "original_plan": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=UUc%2B7P6vL4o%3D&mid=1060&tabid=159"
+  },
+  "segments": [
+    {
+      "name": "Functional materials including copper foil",
+      "role": "product_pool",
+      "values": [
+        37.4,
+        62.6,
+        78.4
+      ],
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159"
+    },
+    {
+      "name": "Metals",
+      "role": "other",
+      "values": [
+        29.2,
+        51.2,
+        19.3
+      ],
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159"
+    },
+    {
+      "name": "Head-office businesses",
+      "role": "other",
+      "values": [
+        0.7,
+        0.4,
+        0.1
+      ],
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159"
+    },
+    {
+      "name": "Business creation",
+      "role": "other",
+      "values": [
+        -6.3,
+        -7.5,
+        -8.9
+      ],
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159"
+    },
+    {
+      "name": "Consolidation and adjustments",
+      "role": "other",
+      "values": [
+        -3.2,
+        -0.3,
+        -0.2
+      ],
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159"
+    }
+  ],
+  "product_sales": 134.982,
+  "growth_targets": [
+    {
+      "fy": 2030,
+      "multiple": 3.2
+    },
+    {
+      "fy": 2033,
+      "multiple": 5.5
+    }
+  ],
+  "peer_margins": [
+    {
+      "company": "JX Advanced Metals ICT materials",
+      "period": "FY2025 (2026-03 year end)",
+      "unit": "JPY million",
+      "sales": 318744,
+      "ebit": 31477,
+      "source": "https://www2.jpx.co.jp/disc/50160/140120260510521173.pdf"
+    },
+    {
+      "company": "Co-Tech Development",
+      "period": "CY2025",
+      "unit": "TWD thousand",
+      "sales": 7879941,
+      "ebit": 1447359,
+      "source": "https://www.co-tech.com/uploads/images/Finance/114%E5%B9%B4%E5%BA%A6%E5%B9%B4%E5%A0%B1.pdf",
+      "filing_reproduction": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=328b556c-49b9-46dc-b548-c9953731a209"
+    }
+  ],
+  "project": {
+    "equipment": 144,
+    "building": 32,
+    "land": 14,
+    "start_fy": 2031,
+    "end_fy": 2033
+  },
+  "plan": {
+    "maintenance_total": 80,
+    "maintenance_years": 3,
+    "realized_maintenance_total": 68,
+    "realized_years": 3,
+    "maintenance_period": [
+      2025,
+      2027
+    ],
+    "realized_period": [
+      2022,
+      2024
+    ],
+    "realized_growth_including_ma_cvc": 32.5,
+    "initial_plan_growth_including_ma_cvc": 81.5,
+    "initial_maintenance_total": 72.5,
+    "updated_growth_including_ma_cvc": 122,
+    "revision_date": "2026-05-21"
+  },
+  "history": [
+    {
+      "fy": 2023,
+      "sales": 646.697,
+      "ebit": 31.694,
+      "da": 34.387,
+      "capex": 31.603,
+      "cash_ppe": 29.043,
+      "cash_intangibles": 2.56,
+      "receivables_cf": -1.535,
+      "inventory_cf": 15.983,
+      "payables_cf": -11.282,
+      "change_nwc_cash_invested": -3.166,
+      "nwc": 232.826,
+      "roic": 0.053,
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=XPAPBXFZVI0%3D&mid=1060&tabid=159",
+      "roic_source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=UUc%2B7P6vL4o%3D&mid=1060&tabid=159"
+    },
+    {
+      "fy": 2024,
+      "sales": 712.344,
+      "ebit": 74.743,
+      "da": 33.191,
+      "capex": 31.392,
+      "cash_ppe": 28.988,
+      "cash_intangibles": 2.404,
+      "receivables_cf": -6.684,
+      "inventory_cf": -16.17,
+      "payables_cf": -1.192,
+      "change_nwc_cash_invested": 24.046,
+      "nwc": 253.96,
+      "roic": 0.114,
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "roic_source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=UUc%2B7P6vL4o%3D&mid=1060&tabid=159"
+    },
+    {
+      "fy": 2025,
+      "sales": 758.532,
+      "ebit": 130.912,
+      "da": 29.762,
+      "capex": 35.97,
+      "cash_ppe": 34.492,
+      "cash_intangibles": 1.478,
+      "receivables_cf": -23.718,
+      "inventory_cf": -50.408,
+      "payables_cf": 23.273,
+      "change_nwc_cash_invested": 50.853,
+      "nwc": 279.4,
+      "roic": 0.195,
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "roic_source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144"
+    }
+  ],
+  "current": {
+    "sales": 875,
+    "ebit": 99,
+    "da": 31,
+    "net_debt": 74.9,
+    "shares_million": 572.13858,
+    "dividend": 18,
+    "dividend_record_date": "2027-03-31",
+    "dividend_ex_date": null,
+    "dividend_pay_date": null,
+    "shares_source": "https://www2.jpx.co.jp/disc/57060/140120261106567263.pdf",
+    "issued_shares_million": 574.20389,
+    "treasury_shares_million": 2.06531,
+    "disposed_base_external_sales": 51.218,
+    "disposed_base_source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+    "disposed_base_ebit": -0.823,
+    "disposed_segment_name": "Head-office businesses"
+  },
+  "metadata": {
+    "currency_unit": "JPY billion unless stated",
+    "period_status": [
+      "actual_restated",
+      "actual",
+      "forecast_2026-11-10"
+    ],
+    "group_rounding_residual": [
+      -0.1,
+      0.0,
+      0.0
+    ],
+    "product_sales_components_fy2025": {
+      "functional_materials_group": 328.4,
+      "copper_foil": 135,
+      "emission_catalysts": 120.6,
+      "functional_powders": 40.9,
+      "other_functional_materials": 32.0,
+      "metals_group": 376.7,
+      "zinc_lead": 247.1,
+      "copper_precious_metals": 105.4,
+      "other_metals": 24.2,
+      "head_office_group": 187.7,
+      "door_locks_divested": 51.2,
+      "other_products": 100.8,
+      "engineering_other": 35.7
+    },
+    "range_limits": [
+      "Company's core operating profit excludes inventory and catalyst precious metal price effects only. FY25 lead raw material mix +3.9, FY26 copper-foil past sales settlement +2.8 and smelter overhauls -4.6 are separately disclosed; periodic major repairs should not automatically be added back.",
+      "Catalysts, powders and other units are not allocated synthetic profits. The same implied foil EBIT must be subtracted from the functional materials base from which it is grown; FY25 anchors FY25 foil sales.",
+      "The 2025 three-year growth budget includes M&A and CVC. Standalone annual category totals, a perpetual organic growth budget, and return on new investment were not disclosed.",
+      "Reported segment data rounded to JPY 100m. FY2024 recast segment amounts total 57.8 versus 57.7 consolidated. EPS and DCF use post-split share units."
+    ],
+    "roic_targets_updated_2026_05": {
+      "FY2026": 0.122,
+      "FY2027": 0.14,
+      "FY2030": 0.2,
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "type": "company_target_not_realized"
+    },
+    "fy25_actual_roic_by_business": {
+      "foil": 0.52,
+      "catalyst": 0.27,
+      "other_functional_materials": 0.11,
+      "metals_division": 0.23,
+      "source": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144"
+    },
+    "product_sales_source_basis": "FY2025 local filing, p.121, revenue disaggregation, ¥ millions. The product sales breakdown in presentation units is rounded."
+  }
+}

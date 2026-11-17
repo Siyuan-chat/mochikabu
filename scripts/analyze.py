@@ -74,7 +74,28 @@ def normalize_holdings(h: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def dcf_value(dcf: Dict[str, Any]) -> Dict[str, Any]:
-    fcfs = [float(x) for x in dcf["fcf_billion"]]
+    annual = dcf.get("annual_operating_forecast")
+    expansion = dcf.get("material_expansion")
+    if expansion and not annual:
+        raise ValueError("Material expansion requires an annual operating forecast through ramp-up")
+    if annual is not None:
+        years = [row["fy"] for row in annual]
+        if not years or years != list(range(years[0], years[0] + len(years))):
+            raise ValueError("Provide consecutive fiscal years")
+        fcfs = []
+        for row in annual:
+            cf = row["ebit"] - row["cash_tax"] + row["depreciation"] - row["capex"] - row["change_nwc"]
+            fcfs.append(cf)
+        if expansion:
+            if not (years[0] < expansion["commissioning_fy"] <= expansion["ramp_end_fy"] <= years[-1]):
+                raise ValueError("Forecast must cover construction, commissioning and ramp-up")
+            spend = [row["project_capex"] for row in annual]
+            if any(not 0 <= part <= row["capex"] for part, row in zip(spend, annual)):
+                raise ValueError("Project spend must be included in total capex")
+            if not math.isclose(sum(spend), expansion["forecast_period_spend"], rel_tol=1e-6, abs_tol=1e-8):
+                raise ValueError("Annual project spend does not reconcile to forecast-period budget")
+    else:
+        fcfs = [float(x) for x in dcf["fcf_billion"]]
     wacc = float(dcf["wacc"])
     g = float(dcf["terminal_growth"])
     net_debt = float(dcf.get("net_debt_billion", 0.0))
@@ -112,6 +133,7 @@ def dcf_value(dcf: Dict[str, Any]) -> Dict[str, Any]:
     }
 
     return {
+        **({"annual_operating_forecast": [dict(row, fcff=cf) for row, cf in zip(annual, fcfs)]} if annual is not None else {}),
         "pv_forecast_fcf_billion": pv_fcfs,
         "pv_terminal_value_billion": pv_terminal,
         "terminal_value_share_of_ev": pv_terminal / enterprise_value if enterprise_value else None,
@@ -335,6 +357,8 @@ def main() -> int:
     ap.add_argument("--holdings", required=True)
     ap.add_argument("--fetch-price", action="store_true")
     ap.add_argument("--research", help="Public valuation/peer result from value_public.py")
+    ap.add_argument("--history", help="Dated FV vintages, daily closes and actual purchases")
+    ap.add_argument("--market-manifest", help="Refresh only the quote against saved public valuation")
     ap.add_argument("--output")
     args = ap.parse_args()
 
@@ -343,15 +367,22 @@ def main() -> int:
     holdings_raw = load_json(args.holdings)
     holdings = normalize_holdings(holdings_raw)
     research = load_json(args.research) if args.research else None
+    former = config.get("position", {}).get("lifecycle_state") == "former_employee"
+    if args.market_manifest and (not research or args.fetch_price):
+        raise ValueError("--market-manifest requires saved research and a single quote source")
     if research:
         if research.get("currency") != "JPY" or research.get("company_id") != config.get("company_id"):
             raise ValueError("Research report must match config company_id and JPY currency")
         if research.get("valuation", {}).get("status") != "MODELED":
             raise ValueError("Resolve research valuation evidence before projecting contributions")
-        for field in ("margin_of_safety", "incentive_rate", "incentive_tax_rate"):
+        for field in (() if former else ("margin_of_safety", "incentive_rate", "incentive_tax_rate")):
             if field not in research.get("policy", {}) or field not in config or not math.isclose(float(research["policy"][field]), float(config[field])):
                 raise ValueError("Plan and valuation policy differ: " + field)
         quote = research.get("market", {})
+        if args.market_manifest:
+            from value_public import market_for
+            quote = market_for({"id": config["company_id"]}, load_json(args.market_manifest),
+                               dt.datetime.now(dt.timezone.utc), research["max_quote_age_hours"])
         if quote.get("status") != "PUBLIC":
             raise ValueError("Resolve dated market evidence before projecting contributions")
         timestamp = dt.datetime.fromisoformat(quote["price_as_of"].replace("Z", "+00:00"))
@@ -361,6 +392,8 @@ def main() -> int:
         if age_hours < -0.1 or age_hours > float(research.get("max_quote_age_hours", 72)):
             raise ValueError("Refresh the research quote before projecting contributions")
         fv = research["valuation"]
+        if args.market_manifest:
+            fv = dict(fv, market_premium_to_fair_value=quote["current_price"] / fv["fair_value_per_share"] - 1)
     else:
         fv = get_fair_value(config)
     fair_value = float(fv["fair_value_per_share"])
@@ -368,12 +401,12 @@ def main() -> int:
     target_cost = fair_value * (1 - margin)
     incentive_rate = float(config.get("incentive_rate", 0.0))
     incentive_tax_rate = float(config.get("incentive_tax_rate", 0.0))
-    effective_incentive = incentive_rate * (1 - incentive_tax_rate)
+    effective_incentive = 0 if former else incentive_rate * (1 - incentive_tax_rate)
     marginal_target_market_price = target_cost * (1 + effective_incentive)
 
     market: Dict[str, Any] = {}
     if research:
-        market = research["market"]
+        market = quote
     elif args.fetch_price:
         try:
             if not config.get("ticker") or config["ticker"] == "EXAMPLE":
@@ -391,7 +424,7 @@ def main() -> int:
     target_max = float(config.get("target_shares_max", float("inf")))
 
     grid: List[Dict[str, Any]] = []
-    for monthly in candidates:
+    for monthly in ([] if former else candidates):
         bonus = choose_bonus(config, monthly)
         for p in scenarios:
             proj = simulate_plan(holdings, config, p, monthly, bonus)
@@ -405,9 +438,12 @@ def main() -> int:
         float(config.get("current_monthly", 0.0)),
         float(config.get("max_step_change", float("inf"))),
     )
+    if former:
+        decision = {}
     decision["role"] = "scenario_score_requires_agent_review"
-    if research:
-        decision["purchase_signal"] = research["purchase_signal"]
+    if research and not former:
+        decision["purchase_signal"] = ({"status": "OPEN", "action": "refresh_peer_comparison"}
+                                       if args.market_manifest else research["purchase_signal"])
 
     current_price = market.get("current_price")
     if current_price is not None:
@@ -440,6 +476,17 @@ def main() -> int:
             "Refresh all DCF inputs from public IR before an actual contribution change.",
         ],
     }
+    if "position" in config or "valuation_policy" in config:
+        from position_policy import decide
+        signal = decision.get("purchase_signal", {})
+        decision["position_policy"] = decide(config, fv, current_price,
+                                             signal.get("action") if signal.get("status") == "INDICATIVE" else None)
+        if former:
+            decision["role"] = "holding_policy_requires_agent_review"
+        decision["position_policy"]["scenario_selected_monthly"] = decision.get("selected_monthly")
+    if args.history:
+        from position_policy import residency
+        out["accumulation_history"] = residency(load_json(args.history), config.get("company_id"), config["as_of"])
     dump_json(out, args.output)
     return 0
 

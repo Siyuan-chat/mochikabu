@@ -1,0 +1,6 @@
+{
+  "purpose": "Desktop blind test only. Send the initial question alone. After the chat asks for personal inputs, the test coordinator replies with the following text without asking the user to confirm.",
+  "question": "三井金属每月拠出 15,000 日元该维持还是下调",
+  "reply": "每月拠出 15,000 日元，每次奖金拠出月额的 3 倍。三井金属股票约占存款和投资总额的 10%，现金储蓄够用，奨励金是 10%。按每年两次奖金测算。",
+  "scope": "Do not load this file in ordinary financial reviews or send it before the chat independently asks. Treat twice-yearly bonuses as a test assumption."
+}

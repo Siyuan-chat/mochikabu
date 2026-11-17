@@ -1,0 +1,1030 @@
+{
+  "model": "expansion_fcff_v1",
+  "ticker": "5706",
+  "market_date": "2026-11-16",
+  "tables": [
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2023-04-01",
+      "period_end": "2024-03-31",
+      "unit": "JPY million",
+      "published": "2024-05-13",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=XPAPBXFZVI0%3D&mid=1060&tabid=159",
+      "page": "pp.11–12",
+      "column": "当連結会計年度",
+      "rows": {
+        "receivables": [
+          "受取手形、売掛金及び契約資産",
+          117921
+        ],
+        "inventory": [
+          [
+            "商品及び製品",
+            56234
+          ],
+          [
+            "仕掛品",
+            42114
+          ],
+          [
+            "原材料及び貯蔵品",
+            66883
+          ]
+        ],
+        "payables": [
+          "支払手形及び買掛金",
+          50326
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2023-04-01",
+      "period_end": "2024-03-31",
+      "unit": "JPY million",
+      "published": "2024-05-13",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=XPAPBXFZVI0%3D&mid=1060&tabid=159",
+      "page": "p.13",
+      "column": "当連結会計年度",
+      "rows": {
+        "sales": [
+          "売上高",
+          646697
+        ],
+        "ebit": [
+          "営業利益",
+          31694
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2023-04-01",
+      "period_end": "2024-03-31",
+      "unit": "JPY million",
+      "published": "2024-05-13",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=XPAPBXFZVI0%3D&mid=1060&tabid=159",
+      "page": "p.17",
+      "column": "当連結会計年度",
+      "rows": {
+        "da": [
+          "減価償却費",
+          34387
+        ],
+        "ppe_cash": [
+          "有形固定資産の取得による支出",
+          -29043
+        ],
+        "intangible_cash": [
+          "無形固定資産の取得による支出",
+          -2560
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "pp.79–80",
+      "column": "前連結会計年度",
+      "rows": {
+        "receivables": [
+          "受取手形、売掛金及び契約資産",
+          122711
+        ],
+        "inventory": [
+          [
+            "商品及び製品",
+            60535
+          ],
+          [
+            "仕掛品",
+            45274
+          ],
+          [
+            "原材料及び貯蔵品",
+            73488
+          ]
+        ],
+        "payables": [
+          "支払手形及び買掛金",
+          48048
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "p.81",
+      "column": "前連結会計年度",
+      "rows": {
+        "sales": [
+          "売上高",
+          712344
+        ],
+        "ebit": [
+          "営業利益",
+          74743
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "p.85",
+      "column": "前連結会計年度",
+      "rows": {
+        "da": [
+          "減価償却費",
+          33191
+        ],
+        "ppe_cash": [
+          "有形固定資産の取得による支出",
+          -28988
+        ],
+        "intangible_cash": [
+          "無形固定資産の取得による支出",
+          -2404
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "pp.79–80",
+      "column": "当連結会計年度",
+      "rows": {
+        "receivables": [
+          "受取手形、売掛金及び契約資産",
+          127810
+        ],
+        "inventory": [
+          [
+            "商品及び製品",
+            67729
+          ],
+          [
+            "仕掛品",
+            64286
+          ],
+          [
+            "原材料及び貯蔵品",
+            80869
+          ]
+        ],
+        "payables": [
+          "支払手形及び買掛金",
+          61294
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "p.81",
+      "column": "当連結会計年度",
+      "rows": {
+        "sales": [
+          "売上高",
+          758532
+        ],
+        "ebit": [
+          "営業利益",
+          130912
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "p.85",
+      "column": "当連結会計年度",
+      "rows": {
+        "da": [
+          "減価償却費",
+          29762
+        ],
+        "ppe_cash": [
+          "有形固定資産の取得による支出",
+          -34492
+        ],
+        "intangible_cash": [
+          "無形固定資産の取得による支出",
+          -1478
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261106567263.pdf",
+      "page": "p.1 連結業績予想",
+      "column": "通期",
+      "rows": {
+        "sales": [
+          "売上高",
+          875000
+        ],
+        "ebit": [
+          "営業利益",
+          99000
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "設備投資・減価償却",
+      "column": "FY2026 予想（11/10）",
+      "rows": {
+        "da": [
+          "減価償却費",
+          310
+        ]
+      }
+    },
+    {
+      "scope": "consolidated",
+      "kind": "actual",
+      "period_start": "2026-09-30",
+      "period_end": "2026-09-30",
+      "unit": "shares",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261106567263.pdf",
+      "page": "p.2 発行済株式数（普通株式）",
+      "column": "2027年3月期中間期",
+      "rows": {
+        "issued_shares": [
+          "期末発行済株式数（自己株式を含む）",
+          574203890
+        ],
+        "treasury_shares": [
+          "期末自己株式数",
+          2065310
+        ]
+      }
+    },
+    {
+      "scope": "project",
+      "kind": "plan",
+      "period_start": "2026-11-10",
+      "period_end": "2034-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=g%2F1XYEdOfgg%3D&mid=1060&tabid=100",
+      "page": "pp.1–2 新工場の概要",
+      "column": "投資額",
+      "rows": {
+        "project_budget": [
+          "投資総額",
+          1900
+        ]
+      }
+    }
+  ],
+  "product_tables": [
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2023-04-01",
+      "period_end": "2024-03-31",
+      "unit": "percent",
+      "published": "2026-05-21",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144",
+      "page": "p.6 ROIC",
+      "column": "2023年度",
+      "rows": {
+        "roic": [
+          "ROIC",
+          5.3
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "percent",
+      "published": "2026-05-21",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144",
+      "page": "p.6 ROIC",
+      "column": "2024年度",
+      "rows": {
+        "roic": [
+          "ROIC",
+          11.4
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "percent",
+      "published": "2026-05-21",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144",
+      "page": "p.6 ROIC",
+      "column": "2025年度",
+      "rows": {
+        "roic": [
+          "ROIC",
+          19.5
+        ]
+      }
+    },
+    {
+      "scope": "segment/機能材料",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.23 新組織",
+      "column": "2024年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "機能材料",
+          374
+        ]
+      }
+    },
+    {
+      "scope": "segment/金属",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.23 新組織",
+      "column": "2024年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "金属",
+          292
+        ]
+      }
+    },
+    {
+      "scope": "segment/本社管轄",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.23 新組織",
+      "column": "2024年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "本社管轄",
+          7
+        ]
+      }
+    },
+    {
+      "scope": "segment/事業創造",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.23 新組織",
+      "column": "2024年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "事業創造",
+          -63
+        ]
+      }
+    },
+    {
+      "scope": "segment/調整額",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.23 新組織",
+      "column": "2024年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "調整額",
+          -32
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.23 新組織",
+      "column": "2024年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "連結",
+          577
+        ]
+      }
+    },
+    {
+      "scope": "segment/機能材料",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2025年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "機能材料",
+          626
+        ]
+      }
+    },
+    {
+      "scope": "segment/金属",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2025年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "金属",
+          512
+        ]
+      }
+    },
+    {
+      "scope": "segment/本社管轄",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2025年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "本社管轄",
+          4
+        ]
+      }
+    },
+    {
+      "scope": "segment/事業創造",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2025年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "事業創造",
+          -75
+        ]
+      }
+    },
+    {
+      "scope": "segment/調整額",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2025年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "調整額",
+          -3
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2025年度実績",
+      "rows": {
+        "normalized_ebit": [
+          "連結",
+          1064
+        ]
+      }
+    },
+    {
+      "scope": "segment/機能材料",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2026年度予想（11/10）",
+      "rows": {
+        "normalized_ebit": [
+          "機能材料",
+          784
+        ]
+      }
+    },
+    {
+      "scope": "segment/金属",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2026年度予想（11/10）",
+      "rows": {
+        "normalized_ebit": [
+          "金属",
+          193
+        ]
+      }
+    },
+    {
+      "scope": "segment/本社管轄",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2026年度予想（11/10）",
+      "rows": {
+        "normalized_ebit": [
+          "本社管轄",
+          1
+        ]
+      }
+    },
+    {
+      "scope": "segment/事業創造",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2026年度予想（11/10）",
+      "rows": {
+        "normalized_ebit": [
+          "事業創造",
+          -89
+        ]
+      }
+    },
+    {
+      "scope": "segment/調整額",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2026年度予想（11/10）",
+      "rows": {
+        "normalized_ebit": [
+          "調整額",
+          -2
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "p.26 実力損益推移・営業利益",
+      "column": "2026年度予想（11/10）",
+      "rows": {
+        "normalized_ebit": [
+          "連結",
+          887
+        ]
+      }
+    },
+    {
+      "scope": "product",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "p.121 収益の分解",
+      "column": "当連結会計年度",
+      "rows": {
+        "sales": [
+          "銅箔",
+          134982
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY million",
+      "published": "2026-06-24",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Kpe%2BA1bTYyE%3D&mid=1060&tabid=159",
+      "page": "p.119 事業分離",
+      "column": "当連結会計年度",
+      "rows": {
+        "disposed_sales": [
+          "売上高",
+          51218
+        ],
+        "disposed_ebit": [
+          "営業損益",
+          -823
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "財政状態",
+      "column": "27/3 予想（11/10）",
+      "rows": {
+        "net_debt": [
+          "ネット有利子負債",
+          749
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "forecast",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "unit": "JPY/share",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261106567263.pdf",
+      "page": "p.1 配当の状況",
+      "column": "期末",
+      "rows": {
+        "dividend": [
+          "2027年3月期（予想）",
+          18
+        ]
+      }
+    },
+    {
+      "scope": "product",
+      "kind": "plan",
+      "period_start": "2030-04-01",
+      "period_end": "2031-03-31",
+      "unit": "multiple",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "銅箔事業 営業利益目標",
+      "column": "2030年度（対FY2025）",
+      "rows": {
+        "profit_multiple": [
+          "営業利益",
+          3.2
+        ]
+      }
+    },
+    {
+      "scope": "product",
+      "kind": "plan",
+      "period_start": "2033-04-01",
+      "period_end": "2034-03-31",
+      "unit": "multiple",
+      "published": "2026-11-10",
+      "source_url": "https://www2.jpx.co.jp/disc/57060/140120261107568329.pdf",
+      "page": "銅箔事業 営業利益目標",
+      "column": "2033年度（対FY2025）",
+      "rows": {
+        "profit_multiple": [
+          "営業利益",
+          5.5
+        ]
+      }
+    },
+    {
+      "scope": "project",
+      "kind": "plan",
+      "period_start": "2026-11-10",
+      "period_end": "2034-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-11-10",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=g%2F1XYEdOfgg%3D&mid=1060&tabid=100",
+      "page": "pp.1–2 新工場の概要",
+      "column": "投資額",
+      "rows": {
+        "land": [
+          "土地",
+          140
+        ],
+        "building": [
+          "建屋",
+          320
+        ],
+        "equipment": [
+          "設備等",
+          1440
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "actual",
+      "period_start": "2022-04-01",
+      "period_end": "2025-03-31",
+      "unit": "JPY 100 million",
+      "published": "2025-05-21",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=UUc%2B7P6vL4o%3D&mid=1060&tabid=159",
+      "page": "p.40 資金配分",
+      "column": "22中計 実績",
+      "rows": {
+        "maintenance": [
+          "維持・更新投資",
+          680
+        ]
+      }
+    },
+    {
+      "scope": "group",
+      "kind": "plan",
+      "period_start": "2025-04-01",
+      "period_end": "2028-03-31",
+      "unit": "JPY 100 million",
+      "published": "2026-05-21",
+      "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=Qm2Jc2k%2Bpgo%3D&mid=1060&tabid=144",
+      "page": "p.7 資金配分",
+      "column": "25中計 見直し",
+      "rows": {
+        "maintenance": [
+          "維持・更新投資",
+          800
+        ]
+      },
+      "revision_check": {
+        "checked_through": "2026-11-16",
+        "index_url": "https://www.mitsui-kinzoku.com/toushi/",
+        "latest_publication": "2026-05-21",
+        "locator": "25中計 改訂 p7 今回"
+      }
+    },
+    {
+      "scope": "peer/5016",
+      "kind": "actual",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "unit": "JPY million",
+      "published": "2026-05-11",
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120260510521173.pdf",
+      "page": "p.15 セグメント情報",
+      "column": "当連結会計年度 情報通信材料",
+      "rows": {
+        "sales": [
+          "売上高 合計",
+          318744
+        ],
+        "ebit": [
+          "セグメント利益",
+          31477
+        ]
+      }
+    },
+    {
+      "scope": "peer/8358",
+      "kind": "actual",
+      "period_start": "2025-01-01",
+      "period_end": "2025-12-31",
+      "unit": "TWD thousand",
+      "published": "2026-03-06",
+      "source_url": "https://www.moneydj.com/KMDJ/news/newsviewer.aspx?a=21447bfe-41b6-4a1d-b64a-8b151849da16",
+      "page": "董事會公告 第4、6項",
+      "column": "114年1月1日至114年12月31日",
+      "rows": {
+        "sales": [
+          "營業收入",
+          7879941
+        ],
+        "ebit": [
+          "營業利益",
+          1447359
+        ]
+      }
+    }
+  ],
+  "project": {
+    "operation_fy_end": "2032-03-31",
+    "ramp_fy_end": "2034-03-31"
+  },
+  "product": {
+    "base_fy_end": "2026-03-31",
+    "pool": "機能材料",
+    "disposed_segment": "本社管轄",
+    "dividend_record_date": "2027-03-31"
+  },
+  "segment_coverage": {
+    "basis": "新組織 実力損益（営業損益ベース）",
+    "source_url": "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159",
+    "page": "p23",
+    "unit": "JPY 100 million",
+    "scopes": [
+      "group",
+      "segment/機能材料",
+      "segment/金属",
+      "segment/本社管轄",
+      "segment/事業創造",
+      "segment/調整額"
+    ],
+    "columns": [
+      {
+        "period_end": "2024-03-31",
+        "status": "unavailable",
+        "page": "p23",
+        "column": "FY2023 従来組織",
+        "reason": "新組織での比較表示は2024年度から",
+        "checked_sources": [
+          "https://www.mitsui-kinzoku.com/LinkClick.aspx?fileticket=q3r8oPU2SFw%3D&mid=1060&tabid=159"
+        ]
+      },
+      {
+        "period_end": "2025-03-31",
+        "status": "comparable",
+        "page": "p23 新組織",
+        "column": "FY2024 決算",
+        "control_cells": {
+          "group": [
+            "計",
+            577
+          ],
+          "segment/機能材料": [
+            "機能材料",
+            374
+          ],
+          "segment/金属": [
+            "金属",
+            292
+          ],
+          "segment/本社管轄": [
+            "本社管轄",
+            7
+          ],
+          "segment/事業創造": [
+            "事業創造",
+            -63
+          ],
+          "segment/調整額": [
+            "調整額",
+            -32
+          ]
+        }
+      },
+      {
+        "period_end": "2026-03-31",
+        "status": "comparable",
+        "page": "p23 新組織",
+        "column": "FY2025 決算",
+        "control_cells": {
+          "group": [
+            "計",
+            1064
+          ],
+          "segment/機能材料": [
+            "機能材料",
+            626
+          ],
+          "segment/金属": [
+            "金属",
+            512
+          ],
+          "segment/本社管轄": [
+            "本社管轄",
+            4
+          ],
+          "segment/事業創造": [
+            "事業創造",
+            -75
+          ],
+          "segment/調整額": [
+            "調整額",
+            -3
+          ]
+        }
+      },
+      {
+        "period_end": "2027-03-31",
+        "status": "comparable",
+        "page": "p23 新組織",
+        "column": "FY2026 11/10予想",
+        "control_cells": {
+          "group": [
+            "計",
+            887
+          ],
+          "segment/機能材料": [
+            "機能材料",
+            784
+          ],
+          "segment/金属": [
+            "金属",
+            193
+          ],
+          "segment/本社管轄": [
+            "本社管轄",
+            1
+          ],
+          "segment/事業創造": [
+            "事業創造",
+            -89
+          ],
+          "segment/調整額": [
+            "調整額",
+            -2
+          ]
+        }
+      }
+    ]
+  }
+}

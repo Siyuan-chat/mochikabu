@@ -100,6 +100,27 @@ def extract_report(data, kind):
     raise ValueError("Report format must be pdf, xbrl, zip or html")
 
 
+def original_report(directory, url, kind):
+    """One coordinating writer per dated case; keep original bytes separate from extracts."""
+    directory.mkdir(exist_ok=True)
+    key = hashlib.sha256(url.encode()).hexdigest()
+    raw = directory / f"{key}.{kind}"
+    receipt = directory / f"{key}.{kind}.json"
+    if raw.exists() and receipt.exists():
+        meta = json.loads(receipt.read_text(encoding="utf-8"))
+        data = raw.read_bytes()
+        if meta["source_url"] == url and hashlib.sha256(data).hexdigest() == meta["sha256"]:
+            return raw, data, meta
+    data, final, content_type = download(url)
+    meta = dict(source_url=url, final_url=final, content_type=content_type,
+                fetched_at=utc_now(), sha256=hashlib.sha256(data).hexdigest())
+    for path, payload in ((raw,data),(receipt,json.dumps(meta).encode())):
+        pending = path.with_suffix(path.suffix+".part")
+        pending.write_bytes(payload)
+        pending.replace(path)
+    return raw, data, meta
+
+
 def collect(config, output_dir):
     output_dir.mkdir(parents=True, exist_ok=True)
     result = {"currency": "JPY", "fetched_at": utc_now(), "companies": [], "status": "completed"}
@@ -125,15 +146,12 @@ def collect(config, output_dir):
             try:
                 if report["format"] not in ("pdf", "xbrl", "zip", "html"):
                     raise ValueError("Unsupported report format")
-                data, final_url, content_type = download(report["url"])
-                raw_path = output_dir / f"{safe_id}_{i}.{report['format']}"
-                raw_path.write_bytes(data)
+                raw_path, data, meta = original_report(output_dir / "originals", report["url"], report["format"])
                 extracted = extract_report(data, report["format"])
                 text_path = output_dir / f"{safe_id}_{i}.extracted.json"
                 text_path.write_text(json.dumps(extracted, ensure_ascii=False, indent=2), encoding="utf-8")
-                evidence.update(status=extracted["status"], final_url=final_url, fetched_at=utc_now(),
-                                content_type=content_type, raw_path=str(raw_path.resolve()),
-                                extraction_path=str(text_path.resolve()), sha256=hashlib.sha256(data).hexdigest())
+                evidence.update(meta, status=extracted["status"], raw_path=str(raw_path.resolve()),
+                                extraction_path=str(text_path.resolve()))
                 if extracted["status"] == "OPEN":
                     result["status"] = "partial"
             except Exception as error:
