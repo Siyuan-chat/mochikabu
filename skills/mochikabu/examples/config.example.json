@@ -1,0 +1,59 @@
+{
+  "company_name": "Example Company (fictional)",
+  "ticker": "EXAMPLE",
+  "currency": "JPY",
+  "as_of": "2026-09-30",
+  "contribution_start_date": "2026-10-01",
+  "market_price": 1000,
+  "fair_value": {
+    "mode": "dcf",
+    "dcf": {
+      "fcf_billion": [
+        1,
+        1.1,
+        1.2
+      ],
+      "wacc": 0.08,
+      "terminal_growth": 0.02,
+      "net_debt_billion": 2,
+      "shares_million_post_split": 20,
+      "source_note": "Synthetic test inputs only; replace with company-specific public evidence."
+    }
+  },
+  "margin_of_safety": 0.2,
+  "incentive_rate": 0.05,
+  "incentive_tax_rate": 0,
+  "current_monthly": 10000,
+  "current_bonus": 0,
+  "candidate_monthly": [
+    5000,
+    10000,
+    15000
+  ],
+  "bonus_mode": "fixed",
+  "candidate_bonus": 20000,
+  "bonus_months": [
+    3,
+    9
+  ],
+  "dividend_annual_post_split": 20,
+  "dividend_tax_rate": 0,
+  "dividend_reinvest": true,
+  "dividend_reinvest_months": [
+    4,
+    10
+  ],
+  "target_date": "2027-09-30",
+  "target_shares_min": 100,
+  "target_shares_max": 200,
+  "review_months": [
+    3,
+    9
+  ],
+  "scenario_price_multipliers_vs_fv": [
+    0.8,
+    1,
+    1.2
+  ],
+  "max_step_change": 5000
+}

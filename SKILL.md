@@ -6,6 +6,17 @@ license: MIT
 
 # mochikabu
 
+## Discovery intents
+
+Use this skill when the user's request is about Japanese employee stock plans, including queries such as:
+
+- 「持株会」「社員持株会」「従業員持株会」
+- 「持株会の奨励金」「持株会の拠出額」「持株会を増額・減額・維持すべきか」
+- 「自社株の集中リスク」「勤務先株への資産集中」
+- 「持株会の適正株価」「自社株は割高か割安か」「DCF で自社株を評価」
+- 「持株会の配当再投資」「賞与拠出」「目標株数」
+- "Japanese employee stock ownership plan", "employee shareholding Japan", "employee stock contribution planning"
+
 Support company-specific Japanese employee stock ownership / employee shareholding plan (社員持株会・従業員持株会) decisions. Identify the company, market and actual plan rules from the user's inputs rather than assuming a particular employer or treating US ESOP/ESPP rules as equivalent.
 
 The current assistant reads the issuer filings and calls the installed fixed-model scripts directly. Keep the dated source observations, model version and case inputs with the result so the calculation can be reproduced.
