@@ -48,7 +48,7 @@ Inspect attached screenshots visually and transcribe visible values using [examp
 
 ### 3. Fetch financial reports and market evidence
 
-Read [references/public-research.md](references/public-research.md) for script inputs and evidence requirements, and [references/sources.md](references/sources.md) for source selection. Discover current official IR reports for the company and suitable peers. The agent selects peers by business mix, geography, growth, profitability and leverage; explain inclusions/exclusions. Use at least three independent comparable peers for peer-supported purchase signals when available.
+
 
 Generate `research_request.json`, then call:
 
