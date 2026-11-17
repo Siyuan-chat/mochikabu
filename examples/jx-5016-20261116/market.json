@@ -1,0 +1,38 @@
+{
+  "target": {
+    "ticker": "5016",
+    "close": 2305.5,
+    "close_date": "2026-11-16",
+    "close_url": "https://www.jpx.co.jp/automation/markets/statistics-equities/daily/files/202611/stq_20261116.pdf",
+    "eps": 176.74,
+    "filing_date": "2026-11-09",
+    "fiscal_year_end": "2027-03-31",
+    "filing_url": "https://www2.jpx.co.jp/disc/50160/140120261106567181.pdf",
+    "product_url": "https://www.jx-nmm.com/newsrelease/2026/20260616_01.html",
+    "overlap": "Issuer expanding InP substrate capacity.",
+    "site_pe": 20.41,
+    "site_date": "2026-11-16",
+    "site_url": "https://minkabu.jp/stock/5016/daily_valuation"
+  },
+  "market_date": "2026-11-16",
+  "peers": [],
+  "peer_exclusions": [
+    {
+      "name": "AXT",
+      "reason": "December fiscal year-end",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1051627/000143774926008612/axti20251231_10k.htm"
+    },
+    {
+      "name": "Sumitomo Electric",
+      "reason": "No disclosed InP substrate sales meeting 50% of consolidated sales; automotive alone exceeds half.",
+      "source_url": "https://sumitomoelectric.com/ir/highlights"
+    }
+  ],
+  "project_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YINW.pdf",
+  "guidance_url": "https://www2.jpx.co.jp/disc/50160/140120261106567181.pdf",
+  "disclosure_check": {
+    "checked_through": "2026-11-16",
+    "source_url": "https://www.jx-nmm.com/newsrelease/",
+    "changes_and_model_impact": "November 9 revised forecast included."
+  }
+}

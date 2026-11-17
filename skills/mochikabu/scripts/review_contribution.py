@@ -120,6 +120,18 @@ def peer_table(data, trading_day):
                 peer_exclusions=data.get("peer_exclusions", []), peer_implied_price=implied)
 
 
+def compare_market(market, day, model):
+    if model == "industrial_project_fcff_v1":
+        for peer in market["peers"]:
+            mix=peer.get("core_sales",{})
+            source(mix.get("source_url"))
+            amounts=[mix.get(k) for k in ("product_sales","group_sales")]
+            require(all(type(v) in (int,float) and math.isfinite(v) and v>0 for v in amounts)
+                    and .5 <= amounts[0]/amounts[1] <= 1 and mix.get("locator"),
+                    "Use separately disclosed same-product external revenue of at least half of consolidated revenue for the industrial core peer median")
+    return peer_table(market, day)
+
+
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
@@ -202,13 +214,6 @@ def build_review(request, directory, final):
     market = fact_packet(request, directory, "market_file")
     if request["model_id"] == "industrial_project_fcff_v1":
         from industrial_model import run_model
-        for peer in market["peers"]:
-            mix=peer.get("core_sales",{})
-            source(mix.get("source_url"))
-            amounts=[mix.get(k) for k in ("product_sales","group_sales")]
-            require(all(type(v) in (int,float) and math.isfinite(v) and v>0 for v in amounts)
-                    and .5 <= amounts[0]/amounts[1] <= 1 and mix.get("locator"),
-                    "Use separately disclosed same-product external revenue of at least half of consolidated revenue for the industrial core peer median")
     elif request["model_id"] == "expansion_fcff_v1":
         from product_filing_model import run_model
     else:
@@ -221,12 +226,22 @@ def build_review(request, directory, final):
         source(url)
     require(date.fromisoformat(verification["checked_through"]) >= day and verification["changes_and_model_impact"].strip(),
             "Verify public disclosures through the closing session")
-    comparisons = peer_table(market, day)
+    target = market["target"]
+    require(target["close_date"] == day.isoformat(), "Target closing date differs")
+    source(target["close_url"])
+    close = target["close"]
+    require(type(close) in (int, float) and math.isfinite(close) and close > 0, "Invalid target close")
     value = run_model(facts)
     require(value["status"] == "model_ready", "Fixed operating model did not complete")
     bounds = value["fair_value_range_per_share"]
     require(set(bounds) == {"low", "high"} and all(math.isfinite(v) for v in bounds.values())
             and bounds["low"] <= bounds["high"], "Invalid close-date valuation range")
+    try:
+        comparisons = compare_market(market, day, request["model_id"])
+    except (ValueError, KeyError, TypeError) as error:
+        comparisons = dict(peer_comparison_status="incomplete", peer_comparison_reason=str(error),
+                           pe_comparison=[], peer_median=None, peer_implied_price=None,
+                           peer_exclusions=market.get("peer_exclusions", []))
     market_hash = hashlib.sha256(json.dumps(market, sort_keys=True, ensure_ascii=False,
                                             separators=(",", ":")).encode()).hexdigest()
     result = dict(valuation=value, stable_cash_flow_review=stable_review(value, facts), ticker=facts["ticker"], market_date=day.isoformat(),

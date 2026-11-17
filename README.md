@@ -189,3 +189,13 @@ python scripts/analyze.py --config examples/config.example.json --holdings examp
 ## 毎月の拠出額を判断する場合
 
 `python scripts/review_contribution.py case.json --final --output decision.json` を実行します。利益の調整、再投資、年度別のキャッシュフロー、評価範囲、拠出額の判断はすべて固定モデルが計算します。入力項目は [実行仕様](references/review-input.md) を参照してください。
+
+インストール後に過去の判断を再現するには、保存した `case.json` と、そこから参照する財務・市場データを使います。共通スキルディレクトリにインストールした場合は、入力を保存したディレクトリで次を実行します。
+
+```bash
+python ~/.agents/skills/mochikabu/scripts/review_contribution.py case.json --final --output decision.replay.json
+```
+
+**実行例（JX金属、5016、2026年11月16日）**　終値2,305.50円に対し、連結DCFの評価範囲は1株0～1,971.47円でした。磯原のInP基板製造設備1件（180.1億円）を明示的に計上し、2030年8月の完成予定を稼働時期の目安にしています。下限は弱気ケースの株主価値に適用するモデル上のゼロ下限です。連結範囲の変更が過去の利益率に影響しており、この幅は前提に応じた試算です。同業PERは比較条件を満たす企業を確認できず、算出していません。
+
+月額12,000円、賞与拠出なし、奨励金10%、自社株比率5%、資金余力ありという仮定では、奨励金込みの自己負担は1株2,095.91円で評価上限を超えます。この条件での判断は、制度上選択できれば月額8,000円への減額です。[再計算用の入力](examples/jx-5016-20261116/case.json)・[設備計画（有価証券報告書）](https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YINW.pdf)

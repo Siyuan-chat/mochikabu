@@ -1,0 +1,15 @@
+{
+  "ticker": "5016",
+  "model_id": "industrial_project_fcff_v1",
+  "market_date": "2026-11-16",
+  "facts_file": "financial.json",
+  "market_file": "market.json",
+  "personal": {
+    "monthly": 12000,
+    "bonus_multiplier": 0,
+    "bonus_count": 0,
+    "incentive_rate": 0.1,
+    "employer_stock_share": 0.05,
+    "cash_sufficient": true
+  }
+}

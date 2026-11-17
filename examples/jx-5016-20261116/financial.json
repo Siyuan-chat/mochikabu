@@ -1,0 +1,250 @@
+{
+  "ticker": "5016",
+  "model": "industrial_project_fcff_v1",
+  "market_date": "2026-11-16",
+  "tables": [
+    {
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120261106567181.pdf",
+      "published": "2026-11-09",
+      "page": "Cover, section 3, full-year consolidated forecast",
+      "scope": "consolidated",
+      "period_start": "2026-04-01",
+      "period_end": "2027-03-31",
+      "kind": "forecast",
+      "column": "通期",
+      "unit": "JPY million",
+      "rows": {
+        "sales": [
+          "売上高",
+          1050000
+        ],
+        "ebit": [
+          "営業利益",
+          255000
+        ]
+      }
+    },
+    {
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120250507532396.pdf",
+      "published": "2025-05-09",
+      "page": "Consolidated earnings, balance sheet and cash flow, PDF pp. 1, 9–10, 14",
+      "scope": "consolidated",
+      "period_start": "2023-04-01",
+      "period_end": "2024-03-31",
+      "kind": "actual",
+      "column": "前連結会計年度",
+      "unit": "JPY million",
+      "rows": {
+        "sales": [
+          "売上高",
+          1512345
+        ],
+        "ebit": [
+          "営業利益",
+          86172
+        ],
+        "da": [
+          "減価償却費及び償却費",
+          39098
+        ],
+        "capex_cash": [
+          "有形固定資産及び無形資産の取得による支出",
+          -84423
+        ],
+        "receivables": [
+          "営業債権及びその他の債権",
+          108967
+        ],
+        "inventory": [
+          "棚卸資産",
+          254957
+        ],
+        "payables": [
+          "営業債務及びその他の債務",
+          70775
+        ]
+      }
+    },
+    {
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120260510521173.pdf",
+      "published": "2026-05-11",
+      "page": "Consolidated earnings, balance sheet and cash flow, PDF pp. 1, 9–10, 14",
+      "scope": "consolidated",
+      "period_start": "2024-04-01",
+      "period_end": "2025-03-31",
+      "kind": "actual",
+      "column": "前連結会計年度",
+      "unit": "JPY million",
+      "rows": {
+        "sales": [
+          "売上高",
+          714940
+        ],
+        "ebit": [
+          "営業利益",
+          112484
+        ],
+        "da": [
+          "減価償却費及び償却費",
+          44039
+        ],
+        "capex_cash": [
+          "有形固定資産及び無形資産の取得による支出",
+          -63362
+        ],
+        "receivables": [
+          "営業債権及びその他の債権",
+          138259
+        ],
+        "inventory": [
+          "棚卸資産",
+          273187
+        ],
+        "payables": [
+          "営業債務及びその他の債務",
+          92826
+        ]
+      }
+    },
+    {
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120260510521173.pdf",
+      "published": "2026-05-11",
+      "page": "Consolidated earnings, balance sheet and cash flow, PDF pp. 1, 9–10, 14",
+      "scope": "consolidated",
+      "period_start": "2025-04-01",
+      "period_end": "2026-03-31",
+      "kind": "actual",
+      "column": "当連結会計年度",
+      "unit": "JPY million",
+      "rows": {
+        "sales": [
+          "売上高",
+          884638
+        ],
+        "ebit": [
+          "営業利益",
+          174967
+        ],
+        "da": [
+          "減価償却費及び償却費",
+          44679
+        ],
+        "capex_cash": [
+          "有形固定資産及び無形資産の取得による支出",
+          -75530
+        ],
+        "receivables": [
+          "営業債権及びその他の債権",
+          164237
+        ],
+        "inventory": [
+          "棚卸資産",
+          345075
+        ],
+        "payables": [
+          "営業債務及びその他の債務",
+          119703
+        ]
+      }
+    },
+    {
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120261106567181.pdf",
+      "published": "2026-11-09",
+      "page": "Interim balance sheet pp. 6–7",
+      "scope": "consolidated",
+      "period_start": "2026-09-30",
+      "period_end": "2026-09-30",
+      "kind": "actual",
+      "column": "当中間連結会計期間末",
+      "unit": "JPY million",
+      "rows": {
+        "cash": [
+          "現金及び現金同等物",
+          79025
+        ],
+        "debt": [
+          [
+            "流動 借入金",
+            46954
+          ],
+          [
+            "非流動 社債及び借入金",
+            401866
+          ]
+        ],
+        "lease_debt": [
+          [
+            "流動 リース負債",
+            2506
+          ],
+          [
+            "非流動 リース負債",
+            13433
+          ]
+        ],
+        "nci": [
+          "非支配持分",
+          72863
+        ]
+      }
+    },
+    {
+      "source_url": "https://www2.jpx.co.jp/disc/50160/140120261106567181.pdf",
+      "published": "2026-11-09",
+      "page": "Share counts p. 2",
+      "scope": "consolidated",
+      "period_start": "2026-09-30",
+      "period_end": "2026-09-30",
+      "kind": "actual",
+      "column": "当中間連結会計期間末",
+      "unit": "shares",
+      "rows": {
+        "issued_shares": [
+          "期末発行済株式数",
+          949183210
+        ],
+        "treasury_shares": [
+          "期末自己株式数",
+          55142203
+        ]
+      }
+    },
+    {
+      "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YINW.pdf",
+      "published": "2026-06-24",
+      "page": "第24期 有価証券報告書 設備の新設、除却等の計画 磯原地区 2026年4月–2030年8月",
+      "scope": "project",
+      "period_start": "2026-04-01",
+      "period_end": "2031-03-31",
+      "kind": "plan",
+      "column": "投資予定金額 総額",
+      "unit": "JPY million",
+      "rows": {
+        "project_budget": [
+          "インジウムリン基板製造設備",
+          18010
+        ]
+      }
+    }
+  ],
+  "notes": "Isohara InP equipment line only. Planned completion models commissioning of the completed line, excluding earlier stages and other projects. Spend at close unknown. The four-year ceiling is excluded. IFRS broad receivables/payables. FY2024 includes operations subsequently deconsolidated; reported margin range is a sensitivity, not a normalized continuing-business forecast. Equity-method income included in operating profit need not equal cash distributions.",
+  "project": {
+    "name": "Isohara InP substrate equipment, JPY 18,010 million tranche",
+    "start_fy_end": "2027-03-31",
+    "operation_fy_end": "2031-03-31",
+    "start_month": "2026-04",
+    "operation_month": "2030-08"
+  },
+  "guidance_check": {
+    "da": {
+      "status": "not_disclosed",
+      "source_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261109/20261109568753.pdf",
+      "locator": "投融資・減価償却費・研究開発費 reports historical full years and current first half; 投融資 includes investments beyond asset purchases."
+    },
+    "capex_cash": {
+      "status": "different_basis",
+      "source_url": "https://finance-frontend-pc-dist.west.edge.storage-yahoo.jp/disclosure/20261109/20261109568753.pdf",
+      "locator": "投融資・減価償却費・研究開発費 reports historical full years and current first half; 投融資 includes investments beyond asset purchases."
+    }
+  }
+}

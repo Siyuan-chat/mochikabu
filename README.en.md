@@ -135,6 +135,16 @@ User conversation / plan documents
 
 The agent selects a registered model and identifies disclosed financial facts. The versioned runner calculates both valuation bounds and the contribution action. Run `python scripts/review_contribution.py case.json --final --output decision.json`. The input contract and public pass are in [review-input.md](references/review-input.md).
 
+To reproduce a past decision after installation, reuse the saved `case.json` and the financial and market data files it references. For a shared-directory installation, run the following from the saved case directory:
+
+```bash
+python ~/.agents/skills/mochikabu/scripts/review_contribution.py case.json --final --output decision.replay.json
+```
+
+**Example run (JX Advanced Metals, 5016, 2026-11-16).** The stock closed at ¥2,305.50. The consolidated DCF produced ¥0–¥1,971.47 per share. It explicitly models one ¥18.01 billion Isohara InP equipment project, using planned completion in August 2030 as a proxy for commissioning. The weak scenario reached the model’s zero equity floor. Changes in consolidation affect the historical margins used in this sensitivity range. No peer P/E was available under the comparison criteria.
+
+Assuming a ¥12,000 monthly contribution, no bonus payments, a 10% incentive, 5% employer-stock exposure and sufficient cash, the effective cost was ¥2,095.91 per share, above the DCF range. The script selected ¥8,000 per month if the plan offers that election. [Replay inputs](examples/jx-5016-20261116/case.json) · [Equipment plan in the annual filing](https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YINW.pdf)
+
 ## Data collection and offline scenario tools
 
 ```bash
